@@ -64,6 +64,42 @@ subscriptions:
           note: ''
       updated_at: '2026-06-04T06:46:21.261Z'
       paused: false
+    - tag: HOI
+      description: 帮我查找手物交互的姿态估计的论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: hand object interaction
+          keyword_cn: 手物交互
+          query: hand object interaction pose estimation
+        - keyword: hand pose estimation
+          keyword_cn: 手部姿态估计
+          query: hand pose estimation from interaction
+        - keyword: object pose estimation
+          keyword_cn: 物体姿态估计
+          query: object pose estimation in hand manipulation
+        - keyword: hand manipulation
+          keyword_cn: 手部操作
+          query: hand manipulation pose estimation
+        - keyword: grasp pose estimation
+          keyword_cn: 抓取姿态估计
+          query: grasp pose estimation hand object
+        - keyword: hand object contact
+          keyword_cn: 手物接触
+          query: hand object contact pose estimation
+      intent_queries:
+        - query: Find papers on hand object interaction pose estimation
+          query_cn: 寻找关于手物交互姿态估计的论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: Hand and object pose estimation in interactive scenarios
+          query_cn: 交互场景中的手和物体姿态估计
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-04T07:24:15.980Z'
 source_backends:
   arxiv:
     papers_table: arxiv_papers
