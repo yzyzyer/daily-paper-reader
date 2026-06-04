@@ -1,181 +1,653 @@
 {
   "top_k": 200,
-  "generated_at": "2026-06-04T07:18:39.243288+00:00",
-  "papers": [],
+  "generated_at": "2026-06-04T07:31:20.077257+00:00",
+  "papers": [
+    {
+      "id": "openreview-icml-2024-4g5dcjcm1s",
+      "source": "ICML-2024-Public",
+      "title": "VinT-6D: A Large-Scale Object-in-hand Dataset from Vision, Touch and Proprioception",
+      "abstract": "This paper addresses the scarcity of large-scale datasets for accurate object-in-hand pose estimation, which is crucial for robotic in-hand manipulation within the \"Perception-Planning-Control\" paradigm. Specifically, we introduce VinT-6D, the first extensive multi-modal dataset integrating vision, touch, and proprioception, to enhance robotic manipulation. VinT-6D comprises 2 million VinT-Sim and 0.1 million VinT-Real entries, collected via simulations in Mujoco and Blender and a custom-designed real-world platform. This dataset is tailored for robotic hands, offering models with whole-hand tactile perception and high-quality, well-aligned data. To the best of our knowledge, the VinT-Real is the largest considering the collection difficulties in the real-world environment so it can bridge the gap of simulation to real compared to the previous works. Built upon VinT-6D, we present a benchmark method that shows significant improvements in performance by fusing multi-modal information. The project is available at https://VinT-6D.github.io/.",
+      "authors": [
+        "Zhaoliang Wan",
+        "Yonggen Ling",
+        "Senlin Yi",
+        "Lu Qi",
+        "Wang Wei Lee",
+        "Minglei Lu",
+        "Sicheng Yang",
+        "Xiao Teng",
+        "Peng Lu",
+        "Xu Yang",
+        "Ming-Hsuan Yang",
+        "Hui Cheng"
+      ],
+      "primary_category": "ICML.cc/2024/Conference",
+      "categories": [],
+      "published": "2024-05-02T00:37:43.773+00:00",
+      "link": "https://openreview.net/forum?id=4G5Dcjcm1s",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-icml-2025-hm9fnezz6z",
+      "source": "ICML-2025-Accepted",
+      "title": "ExtPose: Robust and Coherent Pose Estimation by Extending ViTs",
+      "abstract": "Vision Transformers (ViT) are remarkable at 3D pose estimation, yet they still encounter certain challenges. One issue is that the popular ViT architecture for pose estimation is limited to images and lacks temporal information. Another challenge is that the prediction often fails to maintain pixel alignment with the original images. To address these issues, we propose a systematic framework for 3D pose estimation, called ExtPose. ExtPose extends image ViT to the challenging scenario and video setting by taking in additional 2D pose evidence and capturing temporal information in a full attention-based manner. We use 2D human skeleton images to integrate structured 2D pose information. By sharing parameters and attending across modalities and frames, we enhance the consistency between 3D poses and 2D videos without introducing additional parameters. We achieve state-of-the-art (SOTA) performance on multiple human and hand pose estimation benchmarks with substantial improvements to 34.0mm (-23%) on 3DPW and 4.9mm (-18%) on FreiHAND in PA-MPJPE over the other ViT-based methods respectively.",
+      "authors": [
+        "Rongyu Chen",
+        "Li'an Zhuo",
+        "Linlin Yang",
+        "Qi WANG",
+        "Liefeng Bo",
+        "Bang Zhang",
+        "Angela Yao"
+      ],
+      "primary_category": "3D Pose Estimation",
+      "categories": [
+        "3D Pose Estimation",
+        "Transformer"
+      ],
+      "published": "2025-05-01T13:12:32.666+00:00",
+      "link": "https://openreview.net/forum?id=hm9FNEZZ6z",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-icml-2025-0odiwdifb7",
+      "source": "ICML-2025-Rejected-Public",
+      "title": "Pose Prior Learner: Unsupervised Categorical Prior Learning for Pose Estimation",
+      "abstract": "A prior represents a set of beliefs or assumptions about a system, aiding inference and decision-making. In this paper, we introduce the challenge of unsupervised categorical prior learning in pose estimation, where AI models learn a general pose prior for an object category from images in a self-supervised manner.\nAlthough priors are effective in estimating pose, acquiring them can be difficult. We propose a novel method, named Pose Prior Learner (PPL), to learn a general pose prior for any object category. PPL uses a hierarchical memory to store compositional parts of prototypical poses, from which we distill a general pose prior. This prior improves pose estimation accuracy through template transformation and image reconstruction. PPL learns meaningful pose priors without any additional human annotations or interventions, outperforming competitive baselines on both human and animal pose estimation datasets. Notably, our experimental results reveal the effectiveness of PPL using learned prototypical poses for pose estimation on occluded images. Through iterative inference, PPL leverages the pose prior to refine estimated poses, regressing them to any prototypical poses stored in memory. Our code, model, and data will be publicly available.",
+      "authors": [
+        "Ziyu Wang",
+        "Shuangpeng Han",
+        "Mengmi Zhang"
+      ],
+      "primary_category": "Prior",
+      "categories": [
+        "Prior",
+        "pose estimation",
+        "unsupervised learning"
+      ],
+      "published": "2025-01-23T12:22:58.909+00:00",
+      "link": "https://openreview.net/forum?id=0OdIwdiFb7",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-icml-2025-x4ytgv2wkj",
+      "source": "ICML-2025-Accepted",
+      "title": "Orient Anything: Learning Robust Object Orientation Estimation from Rendering 3D Models",
+      "abstract": "Orientation is a fundamental attribute of objects, essential for understanding their spatial pose and arrangement. However, practical solutions for estimating the orientation of open-world objects in monocular images remain underexplored. In this work, we introduce Orient Anything, the first foundation model for zero-shot object orientation estimation. A key challenge in this task is the scarcity of orientation annotations for open-world objects. To address this, we propose leveraging the vast resources of 3D models. By developing a pipeline to annotate the front face of 3D objects and render them from random viewpoints, we curate 2 million images with precise orientation annotations across a wide variety of object categories. To fully leverage the dataset, we design a robust training objective that models the 3D orientation as probability distributions over three angles and predicts the object orientation by fitting these distributions. Besides, we propose several strategies to further enhance the synthetic-to-real transfer. Our model achieves state-of-the-art orientation estimation accuracy on both rendered and real images, demonstrating impressive zero-shot capabilities across various scenarios. Furthermore, it shows great potential in enhancing high-level applications, such as understanding complex spatial concepts in images and adjusting 3D object pose.",
+      "authors": [
+        "Zehan Wang",
+        "Ziang Zhang",
+        "Tianyu Pang",
+        "Chao Du",
+        "Hengshuang Zhao",
+        "Zhou Zhao"
+      ],
+      "primary_category": "Object pose",
+      "categories": [
+        "Object pose",
+        "Orientation"
+      ],
+      "published": "2025-05-01T13:18:47.93+00:00",
+      "link": "https://openreview.net/forum?id=x4yTgv2WkJ",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-icml-2024-vitl6cqikk",
+      "source": "ICML-2024-Public",
+      "title": "Semantic-Aware Human Object Interaction Image Generation",
+      "abstract": "Recent text-to-image generative models have demonstrated remarkable abilities in generating realistic images. Despite their great success, these models struggle to generate high-fidelity images with prompts oriented toward human-object interaction (HOI). The difficulty in HOI generation arises from two aspects. Firstly, the complexity and diversity of human poses challenge plausible human generation. Furthermore, untrustworthy generation of interaction boundary regions may lead to deficiency in HOI semantics. To tackle the problems, we propose a Semantic-Aware HOI generation framework SA-HOI . It utilizes human pose quality and interaction boundary region information as guidance for denoising process, thereby encouraging refinement in these regions to produce more reasonable HOI images. Based on it, we establish an iterative inversion and image refinement pipeline to continually enhance generation quality. Further, we introduce a comprehensive benchmark for HOI generation, which comprises a dataset involving diverse and fine-grained HOI categories, along with multiple custom-tailored evaluation metrics for HOI generation. Experiments demonstrate that our method significantly improves generation quality under both HOI-specific and conventional image evaluation metrics. The code is available at https://github.com/XZPKU/SA-HOI.git",
+      "authors": [
+        "Zhu Xu",
+        "Qingchao Chen",
+        "Yuxin Peng",
+        "Yang Liu"
+      ],
+      "primary_category": "ICML.cc/2024/Conference",
+      "categories": [],
+      "published": "2024-05-02T00:41:01.721+00:00",
+      "link": "https://openreview.net/forum?id=vITl6CqIkk",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    }
+  ],
   "queries": [
     {
       "type": "intent_query",
-      "tag": "imu-pose",
-      "paper_tag": "query:imu-pose",
-      "query_text": "Hand pose estimation with IMU sensors for virtual reality",
-      "sim_scores": {},
-      "ranked": []
+      "tag": "HOI",
+      "paper_tag": "query:HOI",
+      "query_text": "Find papers on hand object interaction pose estimation",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        },
+        "openreview-icml-2024-vitl6cqikk": {
+          "score": 0.014925373134328358,
+          "rank": 7
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-icml-2024-4g5dcjcm1s",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2025-x4ytgv2wkj",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2024-vitl6cqikk",
+          "score": 0.9633736559139783,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2025-0odiwdifb7",
+          "score": 0.9279100529100527,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2025-hm9fnezz6z",
+          "score": 0.8279671717171717,
+          "star_rating": 4
+        }
+      ]
     },
     {
       "type": "intent_query",
-      "tag": "imu-pose",
-      "paper_tag": "query:imu-pose",
-      "query_text": "IMU based motion capture for full body and hand tracking",
-      "sim_scores": {},
-      "ranked": []
-    },
-    {
-      "type": "intent_query",
-      "tag": "imu-pose",
-      "paper_tag": "query:imu-pose",
-      "query_text": "Inertial sensor fusion for accurate human pose estimation",
-      "sim_scores": {},
-      "ranked": []
-    },
-    {
-      "type": "intent_query",
-      "tag": "imu-pose",
-      "paper_tag": "query:imu-pose",
-      "query_text": "Research papers on human pose estimation using inertial measurement units",
-      "sim_scores": {},
-      "ranked": []
+      "tag": "HOI",
+      "paper_tag": "query:HOI",
+      "query_text": "Hand and object pose estimation in interactive scenarios",
+      "sim_scores": {
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.015384615384615385,
+          "rank": 5
+        },
+        "openreview-icml-2024-vitl6cqikk": {
+          "score": 0.014925373134328358,
+          "rank": 7
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-icml-2024-4g5dcjcm1s",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2024-vitl6cqikk",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2025-0odiwdifb7",
+          "score": 0.9633736559139783,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2025-x4ytgv2wkj",
+          "score": 0.9279100529100527,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-icml-2025-hm9fnezz6z",
+          "score": 0.8935546874999999,
+          "star_rating": 4
+        }
+      ]
     },
     {
       "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "IMU pose estimation",
-      "sim_scores": {}
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "grasp pose estimation hand object",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        },
+        "openreview-icml-2024-vitl6cqikk": {
+          "score": 0.013333333333333334,
+          "rank": 15
+        }
+      }
     },
     {
       "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "hand pose tracking with inertial measurement units",
-      "sim_scores": {}
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand manipulation",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        }
+      }
     },
     {
       "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "human body pose estimation with inertial sensors",
-      "sim_scores": {}
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand manipulation pose estimation",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.015384615384615385,
+          "rank": 5
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.014705882352941176,
+          "rank": 8
+        },
+        "openreview-icml-2024-vitl6cqikk": {
+          "score": 0.0125,
+          "rank": 20
+        }
+      }
     },
     {
       "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "pose estimation using inertial measurement units",
-      "sim_scores": {}
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand object contact pose estimation",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.015384615384615385,
+          "rank": 5
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        },
+        "openreview-icml-2024-vitl6cqikk": {
+          "score": 0.014285714285714285,
+          "rank": 10
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand object interaction pose estimation",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-icml-2024-vitl6cqikk": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.014925373134328358,
+          "rank": 7
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand pose estimation",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand pose estimation from interaction",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-icml-2024-vitl6cqikk": {
+          "score": 0.014925373134328358,
+          "rank": 7
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.014285714285714285,
+          "rank": 10
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "object pose estimation",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.015625,
+          "rank": 4
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "object pose estimation in hand manipulation",
+      "sim_scores": {
+        "openreview-icml-2024-4g5dcjcm1s": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-icml-2025-hm9fnezz6z": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-icml-2025-x4ytgv2wkj": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-icml-2025-0odiwdifb7": {
+          "score": 0.015384615384615385,
+          "rank": 5
+        },
+        "openreview-icml-2024-vitl6cqikk": {
+          "score": 0.012987012987012988,
+          "rank": 17
+        }
+      }
     }
   ],
   "global_candidate_ids": [
     "openreview-icml-2024-4g5dcjcm1s",
-    "openreview-icml-2025-hm9fnezz6z",
-    "openreview-icml-2024-enngay5ukc",
-    "openreview-icml-2025-advzd958yy",
     "openreview-icml-2025-pnz3piokrn",
-    "openreview-icml-2024-0thua66d8z",
-    "openreview-icml-2025-4x83oh6oy6",
-    "openreview-icml-2024-q0vilv7zaw",
-    "openreview-icml-2025-fki6yjxwcn",
-    "openreview-icml-2024-eanlvrp8n1",
-    "openreview-icml-2025-c0xvsevipu",
-    "openreview-icml-2025-2fdsh5d2th",
-    "openreview-icml-2024-8zdfn7bdah",
+    "openreview-icml-2025-hm9fnezz6z",
     "openreview-icml-2025-0odiwdifb7",
+    "openreview-icml-2025-mzz4bhdifb",
+    "openreview-icml-2024-0thua66d8z",
+    "openreview-icml-2024-atrnm8pyqx",
     "openreview-icml-2025-x4ytgv2wkj",
-    "openreview-icml-2024-oci9ghocws",
-    "openreview-icml-2025-v7ebdkptng",
-    "openreview-icml-2024-jorlz5d7ow",
-    "openreview-icml-2025-rmcyr6vsom",
-    "openreview-icml-2024-chhizgqlug",
-    "openreview-icml-2024-0jv5wplqgv",
-    "openreview-icml-2025-0yxxh8walf",
-    "openreview-icml-2025-7dt3nh5tzq",
-    "openreview-icml-2024-7wgxunof0v",
-    "openreview-icml-2024-ryda4ms18v",
-    "openreview-icml-2024-maviklgqr7",
-    "openreview-icml-2025-vkmi3jztyg",
-    "openreview-icml-2025-rcdynkg1f8",
-    "openreview-icml-2025-to6jrwuxi4",
     "openreview-icml-2024-vitl6cqikk",
+    "openreview-icml-2024-enngay5ukc",
+    "openreview-icml-2025-c0xvsevipu",
+    "openreview-icml-2024-q0vilv7zaw",
+    "openreview-icml-2024-tfeooh9eh0",
+    "openreview-icml-2024-ryda4ms18v",
+    "openreview-icml-2025-fki6yjxwcn",
+    "openreview-icml-2024-chhizgqlug",
+    "openreview-icml-2025-oxzpgnkbb1",
+    "openreview-icml-2024-oci9ghocws",
+    "openreview-icml-2025-fjxcrsfyiv",
+    "openreview-icml-2024-xcykkacmsd",
+    "openreview-icml-2025-xouphjpyrx",
+    "openreview-icml-2025-v7ebdkptng",
+    "openreview-icml-2025-uvfe58msnr",
+    "openreview-icml-2025-2fdsh5d2th",
     "openreview-icml-2025-dewr2augg2",
     "openreview-icml-2025-ruj5ilbuuk",
-    "openreview-icml-2025-ax550vokon",
-    "openreview-icml-2025-answdvjm8v",
-    "openreview-icml-2025-r6ornpridv",
-    "openreview-icml-2024-4hci7jgczk",
-    "openreview-icml-2024-xcykkacmsd",
-    "openreview-icml-2025-vhr9cdeffu",
-    "openreview-icml-2024-ndvxxmxsc5",
-    "openreview-icml-2025-uvfe58msnr",
-    "openreview-icml-2025-cvqwqp9v1d",
-    "openreview-icml-2025-lz4hiowpbo",
+    "openreview-icml-2024-0jv5wplqgv",
     "openreview-icml-2025-dikilmw4f8",
-    "openreview-icml-2025-6vsah1qbjb",
+    "openreview-icml-2025-answdvjm8v",
     "openreview-icml-2024-jvxjdgq4ed",
-    "openreview-icml-2025-oxzpgnkbb1",
-    "openreview-icml-2024-tfeooh9eh0",
-    "openreview-icml-2025-ujlxg9k4b6",
-    "openreview-icml-2025-yoaerylge9",
-    "openreview-icml-2025-uhf0km7r5m",
-    "openreview-icml-2025-ymjchwcb2z",
-    "openreview-icml-2024-ybhcqn4qf4",
-    "openreview-icml-2024-051jaf8mqy",
+    "openreview-icml-2024-7wgxunof0v",
+    "openreview-icml-2025-r6ornpridv",
     "openreview-icml-2025-n1cqqk4hhc",
-    "openreview-icml-2025-vji1nnsw4t",
-    "openreview-icml-2025-fjxcrsfyiv",
-    "openreview-icml-2024-cuirgtvi55",
-    "openreview-icml-2025-f7boaymwl7",
-    "openreview-icml-2024-va7mhtvy5s",
-    "openreview-icml-2025-vwpzkn6usz",
-    "openreview-icml-2025-j9pvnmulqm",
-    "openreview-icml-2025-ymjaybgccc",
-    "openreview-icml-2024-1sesutoih5",
-    "openreview-icml-2024-hr8oxxmb7a",
-    "openreview-icml-2024-ri6lxix0ux",
-    "openreview-icml-2024-ejfqrokaj0",
-    "openreview-icml-2025-ku2fvcepwx",
-    "openreview-icml-2025-hemldrnffy",
-    "openreview-icml-2025-xouphjpyrx",
-    "openreview-icml-2024-u00dmbi8db",
-    "openreview-icml-2025-capngwkeek",
-    "openreview-icml-2024-sbr8gwe1e2",
-    "openreview-icml-2025-jzijxr9kso",
-    "openreview-icml-2024-qoxupshrzb",
-    "openreview-icml-2024-ezcfk8hupf",
-    "openreview-icml-2024-udfzhugtki",
-    "openreview-icml-2025-7exlwkfcgl",
-    "openreview-icml-2025-v7jpraxi5j",
-    "openreview-icml-2024-serrqpdvoy",
-    "openreview-icml-2025-ne5brb1tkn",
-    "openreview-icml-2025-dzlp43cbix",
-    "openreview-icml-2025-dtvvltu1ak",
-    "openreview-icml-2024-r4ng8zyaiz",
-    "openreview-icml-2025-4ssnofuqf1",
-    "openreview-icml-2024-s4hy0l4mml",
-    "openreview-icml-2025-oyzdcczdr9",
-    "openreview-icml-2025-5rtj4myh1c",
-    "openreview-icml-2025-cjcrotfmem",
-    "openreview-icml-2025-agan6xtwwo",
-    "openreview-icml-2025-gfpjo8s8po",
-    "openreview-icml-2024-vhtidvaokc",
-    "openreview-icml-2025-vhacnrfuyh",
-    "openreview-icml-2024-pspyqm4ko0",
-    "openreview-icml-2024-v4qv08vk6s",
-    "openreview-icml-2025-wzkcjzwg3p",
-    "openreview-icml-2025-xyvevdusb6",
-    "openreview-icml-2025-4xnqm4f71y",
+    "openreview-icml-2025-rmcyr6vsom",
+    "openreview-icml-2025-uhf0km7r5m",
     "openreview-icml-2025-6qnbvtkgy2",
-    "openreview-icml-2025-cr9qfd3qrc",
-    "openreview-icml-2025-ftr9ouiuja",
-    "openreview-icml-2025-li4rieeclo",
-    "openreview-icml-2025-ktzinksmtg",
-    "openreview-icml-2025-p0bqivwnez"
+    "openreview-icml-2025-imkfokwfwd",
+    "openreview-icml-2025-rcdynkg1f8",
+    "openreview-icml-2024-051jaf8mqy",
+    "openreview-icml-2025-hemldrnffy",
+    "openreview-icml-2025-yoaerylge9",
+    "openreview-icml-2024-maviklgqr7",
+    "openreview-icml-2024-u00dmbi8db",
+    "openreview-icml-2025-jmz7mr19ak",
+    "openreview-icml-2025-0yxxh8walf",
+    "openreview-icml-2025-7exlwkfcgl",
+    "openreview-icml-2025-ax550vokon",
+    "openreview-icml-2025-vwpzkn6usz",
+    "openreview-icml-2024-mkzgqtrtgy",
+    "openreview-icml-2025-ku2fvcepwx",
+    "openreview-icml-2025-vf5f7cl76i",
+    "openreview-icml-2024-4hci7jgczk",
+    "openreview-icml-2024-sbr8gwe1e2",
+    "openreview-icml-2024-8zdfn7bdah",
+    "openreview-icml-2025-p0bqivwnez",
+    "openreview-icml-2024-1sesutoih5",
+    "openreview-icml-2025-vkmi3jztyg",
+    "openreview-icml-2024-ed4kghokne",
+    "openreview-icml-2024-serrqpdvoy",
+    "openreview-icml-2024-xirkb5nrjl",
+    "openreview-icml-2025-6kealgcu2j",
+    "openreview-icml-2025-ccunmibpcf",
+    "openreview-icml-2024-fyqigqwh3d",
+    "openreview-icml-2025-vhacnrfuyh",
+    "openreview-icml-2024-jorlz5d7ow",
+    "openreview-icml-2025-9v1ew8hgmu",
+    "openreview-icml-2025-avvxx0erkt",
+    "openreview-icml-2024-5pcl5qoofl",
+    "openreview-icml-2025-dgdokuubzf",
+    "openreview-icml-2025-wfmmqlop6m",
+    "openreview-icml-2025-n2dey442pj",
+    "openreview-icml-2025-9jqxuyzdgl",
+    "openreview-icml-2025-tllky9e2bz",
+    "openreview-icml-2024-isusvgs7w1",
+    "openreview-icml-2025-x10ryc8f0c",
+    "openreview-icml-2025-8s5rzd08fi",
+    "openreview-icml-2024-pmncwwkgmz",
+    "openreview-icml-2025-qygurhi4as",
+    "openreview-icml-2025-c4eenwu9fe",
+    "openreview-icml-2025-lz4hiowpbo",
+    "openreview-icml-2024-eanlvrp8n1",
+    "openreview-icml-2025-ne5brb1tkn",
+    "openreview-icml-2024-ndvxxmxsc5",
+    "openreview-icml-2025-4ssnofuqf1",
+    "openreview-icml-2025-5mqqsenqbm",
+    "openreview-icml-2024-pspyqm4ko0",
+    "openreview-icml-2024-ttq3qmkj8w",
+    "openreview-icml-2024-kpegddzucx",
+    "openreview-icml-2024-cuirgtvi55",
+    "openreview-icml-2025-ymjchwcb2z",
+    "openreview-icml-2024-cqufgsiu6w",
+    "openreview-icml-2025-me6pfbatwm",
+    "openreview-icml-2025-0flogptlo1",
+    "openreview-icml-2024-ri6lxix0ux",
+    "openreview-icml-2025-bv7luuyoiq"
   ],
   "global_pool_lane_top_k": 30,
   "global_pool_limit": 120,
   "global_pool_guaranteed_per_lane": 2,
-  "global_pool_effective_size": 103,
-  "reranked_at": "2026-06-04T07:19:49.058015+00:00",
-  "llm_ranked": [],
-  "llm_ranked_at": "2026-06-04T07:20:31.968343+00:00",
+  "global_pool_effective_size": 95,
+  "reranked_at": "2026-06-04T07:31:50.787617+00:00",
+  "llm_ranked": [
+    {
+      "paper_id": "openreview-icml-2024-4g5dcjcm1s",
+      "score": 10.0,
+      "evidence_en": "large-scale object-in-hand pose estimation dataset combining vision, touch, and proprioception for robotic in-hand manipulation",
+      "evidence_cn": "大规模物体在手姿态估计数据集，融合视觉、触觉和本体感觉，用于机器人手中操作",
+      "canonical_evidence": "大规模物体在手姿态估计数据集，融合视觉、触觉和本体感觉，用于机器人手中操作",
+      "tldr_en": "Introduces VinT-6D, the first large-scale multi-modal dataset for object-in-hand pose estimation, with 2M simulated and 0.1M real entries collected from robotic hand platforms; enables accurate pose estimation in hand-object interaction.",
+      "tldr_cn": "针对手中物体姿态估计缺乏大规模数据的问题，本文构建了VinT-6D数据集，包含200万仿真和10万真实样本，同步采集视觉、触觉和本体感觉信息。该数据集专门针对机器人手设计，支持高精度6D姿态估计，为手物交互研究提供了关键资源。",
+      "title_zh": "VinT-6D：融合视觉、触觉与本体感觉的大规模手中物体数据集",
+      "motivation_cn": "现有手中物体姿态估计数据集规模小且模态单一，难以支撑高精度感知。",
+      "method_cn": "通过MuJoCo和Blender仿真及真实平台采集多模态数据，确保视觉-触觉-本体感觉对齐。",
+      "result_cn": "数据集在多个基准上验证，显著提升了手中物体姿态估计的精度。",
+      "conclusion_cn": "该数据集填补了多模态手中物体数据的空白，推动了手物交互感知研究。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand object interaction pose estimation"
+    },
+    {
+      "paper_id": "openreview-icml-2025-0odiwdifb7",
+      "score": 7.0,
+      "evidence_en": "unsupervised categorical prior learning for object pose estimation, transferable to object pose in hand manipulation",
+      "evidence_cn": "无监督类别先验学习用于物体姿态估计，可迁移至手操作中的物体姿态",
+      "canonical_evidence": "无监督类别先验学习用于物体姿态估计，可迁移至手操作中的物体姿态",
+      "tldr_en": "Proposes Pose Prior Learner (PPL) to learn general pose priors for any object category via hierarchical memory, improving pose estimation accuracy; applicable to object pose estimation in hand manipulation scenarios.",
+      "tldr_cn": "针对物体姿态估计中先验获取困难的问题，本文提出Pose Prior Learner（PPL）方法，通过层次化记忆存储原型姿态的组成部件，蒸馏出通用姿态先验，从而提升姿态估计精度。该方法可泛化到任意物体类别，为手操作中的物体姿态估计提供了一种可迁移的先验学习框架。",
+      "title_zh": "Pose Prior Learner：无监督类别先验学习用于姿态估计",
+      "motivation_cn": "现有姿态估计方法依赖标注数据学习先验，但获取通用先验困难，尤其缺乏无监督学习机制。",
+      "method_cn": "提出PPL，利用层次化记忆存储原型姿态部件，通过模板变换和图像重建蒸馏先验。",
+      "result_cn": "在多个物体类别上验证，该方法有效提升了姿态估计精度，且无需人为标注。",
+      "conclusion_cn": "无监督先验学习为物体姿态估计提供了通用解决方案，可推广至手物交互场景。",
+      "matched_requirement_id": "req-3",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "object pose estimation in hand manipulation"
+    },
+    {
+      "paper_id": "openreview-icml-2025-x4ytgv2wkj",
+      "score": 7.0,
+      "evidence_en": "zero-shot object orientation estimation from monocular images; directly applicable to object pose estimation in hand manipulation",
+      "evidence_cn": "单目图像零样本物体方向估计，可直接用于手操作中的物体姿态估计",
+      "canonical_evidence": "单目图像零样本物体方向估计，可直接用于手操作中的物体姿态估计",
+      "tldr_en": "Introduces Orient Anything, the first foundation model for zero-shot object orientation estimation using rendered 3D models; supports over 2M images across categories, enabling robust orientation estimation for open-world objects in hand manipulation contexts.",
+      "tldr_cn": "针对开放世界物体方向估计缺乏标注的问题，本文提出Orient Anything，通过渲染3D模型构建200万张带标注图像，训练出首个零样本物体方向估计基础模型。该方法可直接迁移到手操作场景中，为物体姿态提供关键方向信息。",
+      "title_zh": "Orient Anything：基于3D模型渲染的鲁棒物体方向估计",
+      "motivation_cn": "开放世界物体方向估计缺乏标注数据，现有方法在新类别上表现不佳。",
+      "method_cn": "利用3D模型库，自动标注物体正面方向并渲染多视角图像，训练基础模型。",
+      "result_cn": "在多个数据集上达到最先进零样本性能，尤其对未见物体有良好泛化。",
+      "conclusion_cn": "零样本方向估计为手物交互中的物体感知提供了可行方案。",
+      "matched_requirement_id": "req-3",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "object pose estimation in hand manipulation"
+    },
+    {
+      "paper_id": "openreview-icml-2025-hm9fnezz6z",
+      "score": 6.0,
+      "evidence_en": "3D pose estimation framework extending ViT to video, relevant to hand pose estimation",
+      "evidence_cn": "3D姿态估计框架，将ViT扩展到视频，可用于手部姿态估计",
+      "canonical_evidence": "3D姿态估计框架，将ViT扩展到视频，可用于手部姿态估计",
+      "tldr_en": "ExtPose proposes a systematic 3D pose estimation framework extending ViT to video by incorporating 2D pose evidence and temporal attention, which can be adapted for hand pose estimation in interaction scenarios.",
+      "tldr_cn": "本文针对ViT在3D姿态估计中缺乏时序信息和像素对齐的问题，提出ExtPose框架，通过引入2D人体骨架图和多模态时序注意力，将图像ViT扩展到视频。该方法在视频3D姿态估计中表现鲁棒且一致，其核心设计可迁移至手物交互场景的手部姿态估计。",
+      "title_zh": "ExtPose: 通过扩展ViT实现鲁棒且一致的姿态估计",
+      "motivation_cn": "现有ViT用于姿态估计时缺乏时序信息且预测与图像不对齐。",
+      "method_cn": "结合2D骨架证据和全注意力时序建模，扩展ViT至视频。",
+      "result_cn": "在视频姿态估计任务上实现鲁棒和一致的预测。",
+      "conclusion_cn": "ExtPose为视频3D姿态估计提供了新方案，具有通用性。",
+      "matched_requirement_id": "req-composite-hoi",
+      "matched_query_tag": "query:hoi:composite",
+      "matched_query_text": "Papers central to 帮我查找手物交互的姿态估计的论文, especially work that connects or combines: hand object interaction pose estimation; hand pose estimation from interaction; object pose estimation in hand manipulation; hand manipulation pose estimation; grasp pose estimation hand object; hand object contact pose estimation; Find papers on hand object interaction pose estimation; Hand and object pose estimation in interactive scenarios."
+    },
+    {
+      "paper_id": "openreview-icml-2024-vitl6cqikk",
+      "score": 4.0,
+      "evidence_en": "Human-object interaction image generation with pose guidance",
+      "evidence_cn": "人-物交互图像生成，涉及姿态引导",
+      "canonical_evidence": "人-物交互图像生成，涉及姿态引导",
+      "tldr_en": "Generates HOI images using human pose quality and interaction boundary guidance, addressing pose complexity and boundary artifacts in text-to-image models.",
+      "tldr_cn": "该论文针对文本到图像生成模型中人物交互图像生成质量差的问题，提出SA-HOI框架，利用人体姿态质量和交互边界区域信息引导去噪过程，有效改善了人体姿态的合理性和交互边界的真实性，提升了HOI图像的保真度。",
+      "title_zh": "语义感知的人-物交互图像生成",
+      "motivation_cn": "当前文本到图像模型在生成人-物交互图像时，人体姿态多样性导致生成效果不佳，且交互边界区域易出现语义缺失。",
+      "method_cn": "提出SA-HOI框架，在去噪过程中引入人体姿态质量和交互边界区域信息作为引导，重点优化这些区域。",
+      "result_cn": "实验表明，该方法能生成更真实、语义一致的人-物交互图像，尤其在姿态和边界区域有显著提升。",
+      "conclusion_cn": "通过显式利用人-物交互的先验知识，有效提升了生成模型在复杂交互场景下的性能。",
+      "matched_requirement_id": "req-composite-hoi",
+      "matched_query_tag": "query:hoi:composite",
+      "matched_query_text": "Papers central to 帮我查找手物交互的姿态估计的论文, especially work that connects or combines: hand object interaction pose estimation; hand pose estimation from interaction; object pose estimation in hand manipulation; hand manipulation pose estimation; grasp pose estimation hand object; hand object contact pose estimation; Find papers on hand object interaction pose estimation; Hand and object pose estimation in interactive scenarios."
+    }
+  ],
+  "llm_ranked_at": "2026-06-04T07:33:05.180817+00:00",
   "display_min_score": 4.0,
-  "pruned_at": "2026-06-04T07:20:32.000944+00:00"
+  "pruned_at": "2026-06-04T07:33:05.214203+00:00"
 }
