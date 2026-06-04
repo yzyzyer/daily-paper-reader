@@ -1,0 +1,399 @@
+{
+  "top_k": 200,
+  "generated_at": "2026-06-04T06:58:46.257148+00:00",
+  "papers": [
+    {
+      "id": "openreview-neurips-2025-flkrx29zy6",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "ToF-IP: Time-of-Flight Enhanced Sparse Inertial Poser for Real-time Human Motion Capture",
+      "abstract": "Sparse inertial measurement units (IMUs) provide a portable, low-cost solution for human motion tracking but struggle with error accumulation from drift and sensor noise when estimating joint position through time-based linear acceleration integration (i.e., indirect measurement). \nTo address this, we propose ToF-IP, a novel 3D full-body pose estimation system that integrates Time-of-Flight (ToF) sensors with sparse IMUs. \nThe distinct advantage of our approach is that ToF sensors provide direct distance measurements, effectively mitigating error accumulation without relying on indirect time-based integration. \nFrom a hardware perspective, we maintain the portability of existing solutions by attaching ToF sensors to selected IMUs with a negligible volume increase of just 3\\%.\nOn the software side, we introduce two novel techniques to enhance multi-sensor integration: (i) a Node-Centric Data Integration strategy that leverages a Transformer encoder to explicitly model both intra-node and inter-node data integration by treating each sensing node as a token; and (ii) a Dynamic Spatial Positional Encoding scheme that encodes the continuously changing spatial positions of wearable nodes as motion-conditioned functions, enabling the model to better capture human body dynamics in the embedding space.Additionally, we contribute a 208-minute human motion dataset from 10 participants, including synchronized IMU-ToF measurements and ground-truth from optical tracking.\nExtensive experiments demonstrate that our method outperforms state-of-the-art approaches such as PNP, achieving superior accuracy in tracking complex and slow motions like Tai Chi, which remains challenging for inertial-only methods.",
+      "authors": [
+        "Yuan Yao",
+        "Shifan Jiang",
+        "Yangqing Hou",
+        "Chengxu Zuo",
+        "Xinrui Chen",
+        "Shihui Guo",
+        "Yipeng Qin"
+      ],
+      "primary_category": "IMU",
+      "categories": [
+        "IMU",
+        "ToF",
+        "Motion Capture"
+      ],
+      "published": "2025-09-18T17:33:51.846+00:00",
+      "link": "https://openreview.net/forum?id=fLKrX29Zy6",
+      "pdf_url": null,
+      "tags": [
+        "keyword:imu-pose",
+        "query:imu-pose"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2025-ty9n72fz1k",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "MoPFormer: Motion-Primitive Transformer for Wearable-Sensor Activity Recognition",
+      "abstract": "Human Activity Recognition (HAR) with wearable sensors is challenged by limited interpretability, which significantly impacts cross-dataset generalization. To address this challenge, we propose Motion-Primitive Transformer (MoPFormer), a novel self-supervised framework that enhances interpretability by tokenizing inertial measurement unit signals into semantically meaningful motion primitives and leverages a Transformer architecture to learn rich temporal representations. MoPFormer comprises two stages. The first stage is to partition multi-channel sensor streams into short segments and quantize them into discrete ``motion primitive'' codewords, while the second stage enriches those tokenized sequences through a context-aware embedding module and then processes them with a Transformer encoder. The proposed MoPFormer can be pre-trained using a masked motion-modeling objective that reconstructs missing primitives, enabling it to develop robust representations across diverse sensor configurations. Experiments on six HAR benchmarks demonstrate that MoPFormer not only outperforms state-of-the-art methods but also successfully generalizes across multiple datasets. More importantly, the learned motion primitives significantly enhance both interpretability and cross-dataset performance by capturing fundamental movement patterns that remain consistent across similar activities, regardless of dataset origin.",
+      "authors": [
+        "Hao Zhang",
+        "Zhan Zhuang",
+        "Xuehao Wang",
+        "Xiaodong Yang",
+        "Yu Zhang"
+      ],
+      "primary_category": "Human Activity Recognition",
+      "categories": [
+        "Human Activity Recognition",
+        "Wearable Sensors",
+        "Deep Learning"
+      ],
+      "published": "2025-09-18T17:38:50.891+00:00",
+      "link": "https://openreview.net/forum?id=Ty9n72fZ1K",
+      "pdf_url": null,
+      "tags": [
+        "keyword:imu-pose",
+        "query:imu-pose"
+      ]
+    }
+  ],
+  "queries": [
+    {
+      "type": "intent_query",
+      "tag": "imu-pose",
+      "paper_tag": "query:imu-pose",
+      "query_text": "Hand pose estimation with IMU sensors for virtual reality",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-neurips-2025-flkrx29zy6",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-neurips-2025-ty9n72fz1k",
+          "score": 0.7703788748564866,
+          "star_rating": 4
+        }
+      ]
+    },
+    {
+      "type": "intent_query",
+      "tag": "imu-pose",
+      "paper_tag": "query:imu-pose",
+      "query_text": "IMU based motion capture for full body and hand tracking",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-neurips-2025-ty9n72fz1k": {
+          "score": 0.013157894736842105,
+          "rank": 16
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-neurips-2025-flkrx29zy6",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-neurips-2025-ty9n72fz1k",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        }
+      ]
+    },
+    {
+      "type": "intent_query",
+      "tag": "imu-pose",
+      "paper_tag": "query:imu-pose",
+      "query_text": "Inertial sensor fusion for accurate human pose estimation",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-neurips-2025-ty9n72fz1k": {
+          "score": 0.012048192771084338,
+          "rank": 23
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-neurips-2025-flkrx29zy6",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-neurips-2025-ty9n72fz1k",
+          "score": 0.8057498057498057,
+          "star_rating": 4
+        }
+      ]
+    },
+    {
+      "type": "intent_query",
+      "tag": "imu-pose",
+      "paper_tag": "query:imu-pose",
+      "query_text": "Research papers on human pose estimation using inertial measurement units",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-neurips-2025-ty9n72fz1k": {
+          "score": 0.01098901098901099,
+          "rank": 31
+        }
+      },
+      "ranked": [
+        {
+          "paper_id": "openreview-neurips-2025-flkrx29zy6",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-neurips-2025-ty9n72fz1k",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        }
+      ]
+    },
+    {
+      "type": "keyword",
+      "tag": "imu-pose",
+      "paper_tag": "keyword:imu-pose",
+      "query_text": "IMU pose estimation",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "imu-pose",
+      "paper_tag": "keyword:imu-pose",
+      "query_text": "hand pose tracking with inertial measurement units",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-neurips-2025-ty9n72fz1k": {
+          "score": 0.01282051282051282,
+          "rank": 18
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "imu-pose",
+      "paper_tag": "keyword:imu-pose",
+      "query_text": "human body pose estimation with inertial sensors",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-neurips-2025-ty9n72fz1k": {
+          "score": 0.013888888888888888,
+          "rank": 12
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "imu-pose",
+      "paper_tag": "keyword:imu-pose",
+      "query_text": "human pose estimation IMU",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "imu-pose",
+      "paper_tag": "keyword:imu-pose",
+      "query_text": "pose estimation using inertial measurement units",
+      "sim_scores": {
+        "openreview-neurips-2025-flkrx29zy6": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-neurips-2025-ty9n72fz1k": {
+          "score": 0.009708737864077669,
+          "rank": 43
+        }
+      }
+    }
+  ],
+  "global_candidate_ids": [
+    "openreview-neurips-2025-ggj0qfso5m",
+    "openreview-neurips-2025-stmb6q9pyz",
+    "openreview-neurips-2025-flkrx29zy6",
+    "openreview-neurips-2025-vdv912fa3t",
+    "openreview-neurips-2025-nz4mfzczix",
+    "openreview-neurips-2025-wxo0dlsaif",
+    "openreview-neurips-2025-k61y6ctmrl",
+    "openreview-neurips-2025-6aaixhco6c",
+    "openreview-neurips-2025-m3zxsdl2rk",
+    "openreview-neurips-2025-u8sxx5ite6",
+    "openreview-neurips-2025-vcrc99edtz",
+    "openreview-neurips-2025-0nexr6ldig",
+    "openreview-neurips-2025-cb8jwne2vv",
+    "openreview-neurips-2025-zy5mzxlnca",
+    "openreview-neurips-2025-n3armutfit",
+    "openreview-neurips-2025-onvisnpqbt",
+    "openreview-neurips-2025-vzvomvpsyc",
+    "openreview-neurips-2025-t4irkwexhr",
+    "openreview-neurips-2025-9ghaldornl",
+    "openreview-neurips-2025-bntezdplfh",
+    "openreview-neurips-2025-c0c943r6zj",
+    "openreview-neurips-2025-edpklrzzvu",
+    "openreview-neurips-2025-qjsrgycf4b",
+    "openreview-neurips-2025-ty9n72fz1k",
+    "openreview-neurips-2025-ob5ghrsfi4",
+    "openreview-neurips-2025-jtf0hyfgil",
+    "openreview-neurips-2025-gvq2afuvea",
+    "openreview-neurips-2025-yaf2akj1wm",
+    "openreview-neurips-2025-sujwddyspc",
+    "openreview-neurips-2025-gqhuet0v6f",
+    "openreview-neurips-2025-vzwjhxe8pf",
+    "openreview-neurips-2025-xdttwmjhag",
+    "openreview-neurips-2025-y9adtccegi",
+    "openreview-neurips-2025-zr2mdbrhjx",
+    "openreview-neurips-2025-qug74vcsxf",
+    "openreview-neurips-2025-hio3t2owhb",
+    "openreview-neurips-2025-bxelejg3ve",
+    "openreview-neurips-2025-sagzbti9lj",
+    "openreview-neurips-2025-yfasd68nyi",
+    "openreview-neurips-2025-inepyclgv2",
+    "openreview-neurips-2025-4puumnqxdg",
+    "openreview-neurips-2025-2845h8ua5d",
+    "openreview-neurips-2025-vefpm6gw2s",
+    "openreview-neurips-2025-ig5mtz8etr",
+    "openreview-neurips-2025-appnmuunhx",
+    "openreview-neurips-2025-huzzy5w2js",
+    "openreview-neurips-2025-yvocwqf9k2",
+    "openreview-neurips-2025-kp9b9iqdit",
+    "openreview-neurips-2025-evha17qovj",
+    "openreview-neurips-2025-sv1pbyc8zt",
+    "openreview-neurips-2025-qjee4tibgz",
+    "openreview-neurips-2025-diyduh4ntd",
+    "openreview-neurips-2025-3ipmm7clzx",
+    "openreview-neurips-2025-yokpumjwxc",
+    "openreview-neurips-2025-8rksfl3gsk",
+    "openreview-neurips-2025-pdrf0o7baq",
+    "openreview-neurips-2025-wabvvqktuf",
+    "openreview-neurips-2025-ou9heyvnhb",
+    "openreview-neurips-2025-t1gvxvbkb1",
+    "openreview-neurips-2025-lf0w2gmnbg",
+    "openreview-neurips-2025-kuxnkedjaj",
+    "openreview-neurips-2025-ytwrzp8mno",
+    "openreview-neurips-2025-aqmiol2juw",
+    "openreview-neurips-2025-im8154ljcx",
+    "openreview-neurips-2025-kw2u5szhb6",
+    "openreview-neurips-2025-kk8cfku1u7",
+    "openreview-neurips-2025-crxzkxskow",
+    "openreview-neurips-2025-ewgzitwahh",
+    "openreview-neurips-2025-dg8zwjowgz",
+    "openreview-neurips-2025-ftzeltgark",
+    "openreview-neurips-2025-05f6pdeps2",
+    "openreview-neurips-2025-t64fa2hczn",
+    "openreview-neurips-2025-0biuwyjkkm",
+    "openreview-neurips-2025-fgutn7huo5",
+    "openreview-neurips-2025-i7y7mgsego",
+    "openreview-neurips-2025-pojbw1yqgl",
+    "openreview-neurips-2025-a3ezgit0ub",
+    "openreview-neurips-2025-trheq0yfhv",
+    "openreview-neurips-2025-fooiwsneh9",
+    "openreview-neurips-2025-458m5rsmgj",
+    "openreview-neurips-2025-yqbikztft8",
+    "openreview-neurips-2025-lrirybn3rn",
+    "openreview-neurips-2025-bggftutzom",
+    "openreview-neurips-2025-89ziautowr",
+    "openreview-neurips-2025-eakfenfvpt",
+    "openreview-neurips-2025-htwkjqzt7r",
+    "openreview-neurips-2025-4xl00jwq1z",
+    "openreview-neurips-2025-9xcyufsm1h",
+    "openreview-neurips-2025-d4j2k5lknb",
+    "openreview-neurips-2025-6libpovfws",
+    "openreview-neurips-2025-sopsi570ap",
+    "openreview-neurips-2025-n2qbqh6hen",
+    "openreview-neurips-2025-qnxwta7pzs",
+    "openreview-neurips-2025-tlyljfttx7",
+    "openreview-neurips-2025-jrxgrc6fu7",
+    "openreview-neurips-2025-ptgmadeonu",
+    "openreview-neurips-2025-7llnwh0otf",
+    "openreview-neurips-2025-m5wrqqcwbn",
+    "openreview-neurips-2025-obovyrrsy2",
+    "openreview-neurips-2025-gxgpjfjgmd",
+    "openreview-neurips-2025-q5l7jygjpi",
+    "openreview-neurips-2025-alcdodh7zn",
+    "openreview-neurips-2025-divhwy7wfh",
+    "openreview-neurips-2025-16mdq7m2ok",
+    "openreview-neurips-2025-kmv7yg6qxv",
+    "openreview-neurips-2025-wjyvhsjxrp",
+    "openreview-neurips-2025-63ljkcgmhe",
+    "openreview-neurips-2025-nknryrcgyn",
+    "openreview-neurips-2025-ryydcq2ilv",
+    "openreview-neurips-2025-fdx7eb9cdv",
+    "openreview-neurips-2025-lhw93lkauk"
+  ],
+  "global_pool_lane_top_k": 30,
+  "global_pool_limit": 120,
+  "global_pool_guaranteed_per_lane": 2,
+  "global_pool_effective_size": 111,
+  "reranked_at": "2026-06-04T06:59:57.480827+00:00",
+  "llm_ranked": [
+    {
+      "paper_id": "openreview-neurips-2025-flkrx29zy6",
+      "score": 9.0,
+      "evidence_en": "sparse IMU human motion capture with ToF enhancement",
+      "evidence_cn": "利用稀疏IMU和飞行时间传感器进行人体运动捕捉",
+      "canonical_evidence": "利用稀疏IMU和飞行时间传感器进行人体运动捕捉",
+      "tldr_en": "ToF-IP integrates Time-of-Flight sensors with sparse IMUs to overcome drift and noise in human full-body pose estimation, achieving real-time accurate motion capture.",
+      "tldr_cn": "针对稀疏惯性测量单元（IMU）在人体运动追踪中因漂移和噪声导致误差累积的问题，本文提出ToF-IP系统，将飞行时间（ToF）传感器与稀疏IMU相结合。通过ToF直接距离测量替代间接时间积分，有效抑制了误差累积，同时保持了便携性。实验表明，该方法在实时全身体位估计中显著提升了精度，为IMU人体运动捕捉提供了鲁棒解决方案。",
+      "title_zh": "ToF-IP：飞行时间增强的稀疏惯性定位器用于实时人体运动捕捉",
+      "motivation_cn": "解决稀疏IMU人体运动追踪中由于加速度积分导致的误差累积问题。",
+      "method_cn": "将飞行时间（ToF）传感器附加到选定的IMU上，利用直接距离测量来校正漂移。",
+      "result_cn": "在实时全身体位估计中显著降低误差，优于纯IMU方法。",
+      "conclusion_cn": "融合ToF与IMU可有效提升惯性运动捕捉的准确性和鲁棒性。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:imu-pose",
+      "matched_query_text": "pose estimation using inertial measurement units"
+    },
+    {
+      "paper_id": "openreview-neurips-2025-ty9n72fz1k",
+      "score": 6.0,
+      "evidence_en": "uses IMU signals tokenized into motion primitives; applicable to pose estimation",
+      "evidence_cn": "使用IMU信号编码为运动基元，可应用于姿态估计",
+      "canonical_evidence": "使用IMU信号编码为运动基元，可应用于姿态估计",
+      "tldr_en": "MoPFormer tokenizes inertial measurement unit signals into discrete motion primitives and uses a Transformer to learn temporal representations for activity recognition, offering interpretability and potential for extension to pose estimation.",
+      "tldr_cn": "针对可穿戴传感器活动识别中可解释性差和跨数据集泛化难的问题，MoPFormer提出将惯性测量单元（IMU）信号分割并量化为离散的“运动基元”编码，再通过Transformer结构学习时序表示。该方法在活动识别任务上取得了良好性能，其运动基元编码机制可直接迁移至IMU姿态估计，为利用IMU进行人体姿态估计提供了有价值的思路和基础模块。",
+      "title_zh": "MoPFormer：面向可穿戴传感器活动识别的运动基元Transformer",
+      "motivation_cn": "现有可穿戴传感器活动识别方法可解释性差，难以跨数据集泛化，且缺乏语义级运动表示。",
+      "method_cn": "MoPFormer将IMU多通道信号分段并量化为运动基元离散编码，再利用Transformer进行上下文感知的时序建模。",
+      "result_cn": "在多个数据集上展示了优越的活动识别准确率和跨数据集泛化能力，并增强了模型可解释性。",
+      "conclusion_cn": "该工作为基于IMU的运动感知提供了一种可解释的基元表示方法，可推广至姿态估计等任务。",
+      "matched_requirement_id": "req-composite-imu-pose",
+      "matched_query_tag": "query:imu-pose:composite",
+      "matched_query_text": "Papers central to 利用IMU进行人体或人手姿态估计的论文, especially work that connects or combines: pose estimation using inertial measurement units; human body pose estimation with inertial sensors; hand pose tracking with inertial measurement units; Research papers on human pose estimation using inertial measurement units; Hand pose estimation with IMU sensors for virtual reality; IMU based motion capture for full body and hand tracking; Inertial sensor fusion for accurate human pose estimation."
+    }
+  ],
+  "llm_ranked_at": "2026-06-04T07:00:51.069266+00:00",
+  "display_min_score": 4.0,
+  "pruned_at": "2026-06-04T07:00:51.105349+00:00"
+}
