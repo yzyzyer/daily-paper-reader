@@ -25,3 +25,56 @@ subscriptions:
     stage: A
     diff_threshold_pct: 15
   keyword_recall_mode: or
+  intent_profiles:
+    - tag: imu-pose
+      description: 利用IMU进行人体或人手姿态估计的论文
+      enabled: true
+      paper_sources:
+        - arxiv
+      keywords:
+        - keyword: IMU pose estimation
+          keyword_cn: IMU姿态估计
+          query: pose estimation using inertial measurement units
+        - keyword: human pose estimation IMU
+          keyword_cn: 人体姿态估计IMU
+          query: human body pose estimation with inertial sensors
+        - keyword: hand pose estimation IMU
+          keyword_cn: 手部姿态估计惯性
+          query: hand pose tracking with inertial measurement units
+      intent_queries:
+        - query: Research papers on human pose estimation using inertial measurement units
+          query_cn: 利用惯性测量单元进行人体姿态估计的研究论文
+          enabled: true
+          source: manual
+          note: ''
+        - query: Hand pose estimation with IMU sensors for virtual reality
+          query_cn: 基于IMU传感器的手部姿态估计在虚拟现实中的应用
+          enabled: true
+          source: manual
+          note: ''
+        - query: IMU based motion capture for full body and hand tracking
+          query_cn: 基于IMU的运动捕捉用于全身和手部追踪
+          enabled: true
+          source: manual
+          note: ''
+        - query: Inertial sensor fusion for accurate human pose estimation
+          query_cn: 惯性传感器融合用于精确人体姿态估计
+          enabled: true
+          source: manual
+          note: ''
+      updated_at: '2026-06-04T06:46:21.261Z'
+source_backends:
+  arxiv:
+    papers_table: arxiv_papers
+    use_vector_rpc: true
+    vector_rpc: match_arxiv_papers
+    vector_rpc_exact: match_arxiv_papers_exact
+    use_bm25_rpc: true
+    bm25_rpc: match_arxiv_papers_bm25
+    sync_table: arxiv_sync_status
+    sync_success_value: success
+    schema: public
+    kind: supabase
+    enabled: true
+    url: https://lyucdwgefyfbmaiopjbk.supabase.co
+    anon_key: sb_publishable_lX-oi64Uxyd7SIVv3_w2Uw_MTOojeKq
