@@ -2,6 +2,7 @@
 * <a class="dpr-sidebar-root-link dpr-sidebar-noactive-link" href="javascript:void(0)" data-dpr-hash="#/tutorial/README">使用教程</a>
 
 * Conference Papers
+  * ICML 2024, 2025 <!--dpr-conference:icml-2024-2025-->
   * NEURIPS 2025 <!--dpr-conference:neurips-2025-->
     * imu-pose <!--dpr-conference-topic:neurips-2025:query-imu-pose-->
       * <a class="dpr-sidebar-item-link dpr-sidebar-item-structured" href="#/conference/neurips-2025/openreview-neurips-2025-flkrx29zy6-tof-ip-time-of-flight-enhanced-sparse-inertial-poser-for-real-time-human-motion-capture" data-sidebar-item="{&quot;title&quot;: &quot;ToF-IP: Time-of-Flight Enhanced Sparse Inertial Poser for Real-time Human Motion Capture&quot;, &quot;link&quot;: &quot;https://openreview.net/forum?id=fLKrX29Zy6&quot;, &quot;score&quot;: &quot;9.0&quot;, &quot;selection_source&quot;: &quot;conference_retrieval&quot;, &quot;tags&quot;: [{&quot;kind&quot;: &quot;query&quot;, &quot;label&quot;: &quot;imu-pose&quot;}], &quot;evidence&quot;: &quot;利用稀疏IMU和飞行时间传感器进行人体运动捕捉&quot;}">ToF-IP: Time-of-Flight Enhanced Sparse Inertial Poser for Real-time Human Motion Capture</a>
