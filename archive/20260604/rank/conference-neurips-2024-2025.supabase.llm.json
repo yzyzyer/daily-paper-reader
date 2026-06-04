@@ -1,274 +1,1107 @@
 {
   "top_k": 200,
-  "generated_at": "2026-06-04T07:22:13.395193+00:00",
+  "generated_at": "2026-06-04T07:40:39.432339+00:00",
   "papers": [
     {
-      "id": "openreview-neurips-2025-flkrx29zy6",
+      "id": "openreview-neurips-2025-ggj0qfso5m",
       "source": "NeurIPS-2025-Accepted",
-      "title": "ToF-IP: Time-of-Flight Enhanced Sparse Inertial Poser for Real-time Human Motion Capture",
-      "abstract": "Sparse inertial measurement units (IMUs) provide a portable, low-cost solution for human motion tracking but struggle with error accumulation from drift and sensor noise when estimating joint position through time-based linear acceleration integration (i.e., indirect measurement). \nTo address this, we propose ToF-IP, a novel 3D full-body pose estimation system that integrates Time-of-Flight (ToF) sensors with sparse IMUs. \nThe distinct advantage of our approach is that ToF sensors provide direct distance measurements, effectively mitigating error accumulation without relying on indirect time-based integration. \nFrom a hardware perspective, we maintain the portability of existing solutions by attaching ToF sensors to selected IMUs with a negligible volume increase of just 3\\%.\nOn the software side, we introduce two novel techniques to enhance multi-sensor integration: (i) a Node-Centric Data Integration strategy that leverages a Transformer encoder to explicitly model both intra-node and inter-node data integration by treating each sensing node as a token; and (ii) a Dynamic Spatial Positional Encoding scheme that encodes the continuously changing spatial positions of wearable nodes as motion-conditioned functions, enabling the model to better capture human body dynamics in the embedding space.Additionally, we contribute a 208-minute human motion dataset from 10 participants, including synchronized IMU-ToF measurements and ground-truth from optical tracking.\nExtensive experiments demonstrate that our method outperforms state-of-the-art approaches such as PNP, achieving superior accuracy in tracking complex and slow motions like Tai Chi, which remains challenging for inertial-only methods.",
+      "title": "MEgoHand: Multimodal Egocentric Hand-Object Interaction Motion Generation",
+      "abstract": "Egocentric hand-object motion generation is crucial for immersive AR/VR and robotic imitation but remains challenging due to unstable viewpoints, self-occlusions, perspective distortion, and noisy ego-motion. Existing methods rely on predefined 3D object priors, limiting generalization to novel objects, which restricts their generalizability to novel objects. Meanwhile, recent multimodal approaches suffer from ambiguous generation from abstract textual cues, intricate pipelines for modeling 3D hand-object correlation, and compounding errors in open-loop prediction. We propose **MEgoHand**, a multimodal framework that synthesizes physically plausible hand-object interactions from egocentric RGB, text, and initial hand pose. MEgoHand introduces a bi-level architecture: a high-level “cerebrum” leverages a vision language model (VLM) to infer motion priors from visual-textual context and a monocular depth estimator for object-agnostic spatial reasoning, while a low-level DiT-based flow-matching policy generates fine-grained trajectories with temporal orthogonal filtering to enhance stability. To address dataset inconsistency, we design a dataset curation paradigm with an Inverse MANO Retargeting Network and Virtual RGB-D Renderer, curating a unified dataset of **3.35M** RGB-D frames, **24K** interactions, and **1.2K** objects. Extensive experiments across **five** in-domain and **two** cross-domain datasets demonstrate the effectiveness of MEgoHand, achieving substantial reductions in wrist translation error (**86.9%**) and joint rotation error (**34.1%**), highlighting its capacity to accurately model fine-grained hand joint structures and generalize robustly across diverse scenarios.",
       "authors": [
-        "Yuan Yao",
-        "Shifan Jiang",
-        "Yangqing Hou",
-        "Chengxu Zuo",
-        "Xinrui Chen",
-        "Shihui Guo",
-        "Yipeng Qin"
+        "Bohan Zhou",
+        "Yi Zhan",
+        "Zhongbin Zhang",
+        "Zongqing Lu"
       ],
-      "primary_category": "IMU",
+      "primary_category": "Multimodal Generation",
       "categories": [
-        "IMU",
-        "ToF",
-        "Motion Capture"
+        "Multimodal Generation",
+        "Hand-Object Interaction"
       ],
-      "published": "2025-09-18T17:33:51.846+00:00",
-      "link": "https://openreview.net/forum?id=fLKrX29Zy6",
+      "published": "2025-09-18T17:32:56.565+00:00",
+      "link": "https://openreview.net/forum?id=GGj0QFSo5m",
       "pdf_url": null,
       "tags": [
-        "keyword:imu-pose",
-        "query:imu-pose"
+        "keyword:HOI",
+        "query:HOI"
       ]
     },
     {
-      "id": "openreview-neurips-2024-j2hzctqbf0",
+      "id": "openreview-neurips-2024-gkhxbasqwm",
       "source": "NeurIPS-2024-Accepted",
-      "title": "Accurate and Steady Inertial Pose Estimation through Sequence Structure Learning and Modulation",
-      "abstract": "Transformer models excel at capturing long-range dependencies in sequential data, but lack explicit mechanisms to leverage structural patterns inherent in fixed-length input sequences. \nIn this paper, we propose a novel sequence structure learning and modulation approach that endows Transformers with the ability to model and utilize such fixed-sequence structural properties for improved performance on inertial pose estimation tasks.\nSpecifically, our method introduces a Sequence Structure Module (SSM) that utilizes structural information of fixed-length inertial sensor readings to adjust the input features of transformers.\nSuch structural information can either be acquired by learning or specified based on users' prior knowledge.\nTo justify the prospect of our approach, we show that i) injecting spatial structural information of IMUs/joints learned from data improves accuracy, while ii) injecting temporal structural information based on smooth priors reduces jitter (i.e., improves steadiness), in a spatial-temporal transformer solution for inertial pose estimation.\nExtensive experiments across multiple benchmark datasets demonstrate the superiority of our approach against state-of-the-art methods and has the potential to advance the design of the transformer architecture for fixed-length sequences.",
+      "title": "HOI-Swap: Swapping Objects in Videos with Hand-Object Interaction Awareness",
+      "abstract": "We study the problem of precisely swapping objects in videos, with a focus on those interacted with by hands, given one user-provided reference object image. Despite the great advancements that diffusion models have made in video editing recently, these models often fall short in handling the intricacies of hand-object interactions (HOI), failing to produce realistic edits---especially when object swapping results in object shape or functionality changes. To bridge this gap, we present HOI-Swap, a novel diffusion-based video editing framework trained in a self-supervised manner.  Designed in two stages, the first stage focuses on object swapping in a single frame with HOI awareness; the model learns to adjust the interaction patterns, such as the hand grasp, based on changes in the object's properties. The second stage extends the single-frame edit across the entire sequence; we achieve controllable motion alignment with the original video by: (1) warping a new sequence from the stage-I edited frame based on sampled motion points and (2) conditioning video generation on the warped sequence. Comprehensive qualitative and quantitative evaluations demonstrate that HOI-Swap significantly outperforms existing methods, delivering high-quality video edits with realistic HOIs.",
       "authors": [
-        "Yinghao Wu",
-        "chaoran wang",
-        "Lu Yin",
-        "Shihui Guo",
-        "Yipeng Qin"
+        "Zihui Xue",
+        "Mi Luo",
+        "Changan Chen",
+        "Kristen Grauman"
       ],
-      "primary_category": "Inertial Measurement Units (IMUs)",
+      "primary_category": "video editing",
       "categories": [
-        "Inertial Measurement Units (IMUs)",
-        "Pose Estimation",
-        "Transformer"
+        "video editing",
+        "hand-object interaction"
       ],
-      "published": "2024-09-25T18:15:38.231+00:00",
-      "link": "https://openreview.net/forum?id=j2hzCTqbF0",
+      "published": "2024-09-25T18:08:29.198+00:00",
+      "link": "https://openreview.net/forum?id=GkHXBasQwm",
       "pdf_url": null,
       "tags": [
-        "keyword:imu-pose",
-        "query:imu-pose"
+        "keyword:HOI",
+        "query:HOI"
       ]
     },
     {
-      "id": "openreview-neurips-2025-ty9n72fz1k",
+      "id": "openreview-neurips-2025-0biuwyjkkm",
       "source": "NeurIPS-2025-Accepted",
-      "title": "MoPFormer: Motion-Primitive Transformer for Wearable-Sensor Activity Recognition",
-      "abstract": "Human Activity Recognition (HAR) with wearable sensors is challenged by limited interpretability, which significantly impacts cross-dataset generalization. To address this challenge, we propose Motion-Primitive Transformer (MoPFormer), a novel self-supervised framework that enhances interpretability by tokenizing inertial measurement unit signals into semantically meaningful motion primitives and leverages a Transformer architecture to learn rich temporal representations. MoPFormer comprises two stages. The first stage is to partition multi-channel sensor streams into short segments and quantize them into discrete ``motion primitive'' codewords, while the second stage enriches those tokenized sequences through a context-aware embedding module and then processes them with a Transformer encoder. The proposed MoPFormer can be pre-trained using a masked motion-modeling objective that reconstructs missing primitives, enabling it to develop robust representations across diverse sensor configurations. Experiments on six HAR benchmarks demonstrate that MoPFormer not only outperforms state-of-the-art methods but also successfully generalizes across multiple datasets. More importantly, the learned motion primitives significantly enhance both interpretability and cross-dataset performance by capturing fundamental movement patterns that remain consistent across similar activities, regardless of dataset origin.",
+      "title": "OpenHOI: Open-World Hand-Object Interaction Synthesis with Multimodal Large Language Model",
+      "abstract": "Understanding and synthesizing realistic 3D hand-object interactions (HOI) is critical for applications ranging from immersive AR/VR to dexterous robotics. Existing methods struggle with generalization, performing well on closed-set objects and predefined tasks but failing to handle unseen objects or open-vocabulary instructions. We introduce OpenHOI, the first framework for open-world HOI synthesis, capable of generating long-horizon manipulation sequences for novel objects guided by free-form language commands. Our approach integrates a 3D Multimodal Large Language Model (MLLM) fine-tuned for joint affordance grounding and semantic task decomposition, enabling precise localization of interaction regions (e.g., handles, buttons) and breakdown of complex instructions (e.g., “Find a water bottle and take a sip”) into executable sub-tasks. To synthesize physically plausible interactions, we propose an affordance-driven diffusion model paired with a training-free physics refinement stage that minimizes penetration and optimizes affordance alignment.\nEvaluations across diverse scenarios demonstrate OpenHOI’s superiority over state-of-the-art methods in generalizing to novel object categories, multi-stage tasks, and complex language instructions.",
       "authors": [
-        "Hao Zhang",
-        "Zhan Zhuang",
-        "Xuehao Wang",
-        "Xiaodong Yang",
-        "Yu Zhang"
+        "Zhenhao Zhang",
+        "Ye Shi",
+        "Lingxiao Yang",
+        "Suting Ni",
+        "Qi Ye",
+        "Jingya Wang"
       ],
-      "primary_category": "Human Activity Recognition",
+      "primary_category": "Hand-Object Interaction;Open-World;Large Language Models",
       "categories": [
-        "Human Activity Recognition",
-        "Wearable Sensors",
-        "Deep Learning"
+        "Hand-Object Interaction;Open-World;Large Language Models"
       ],
-      "published": "2025-09-18T17:38:50.891+00:00",
-      "link": "https://openreview.net/forum?id=Ty9n72fZ1K",
+      "published": "2025-09-18T17:32:32.868+00:00",
+      "link": "https://openreview.net/forum?id=0biUwyjKkm",
       "pdf_url": null,
       "tags": [
-        "keyword:imu-pose",
-        "query:imu-pose"
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2024-lts7pp8ren",
+      "source": "NeurIPS-2024-Accepted",
+      "title": "Posture-Informed Muscular Force Learning for Robust Hand Pressure Estimation",
+      "abstract": "We present PiMForce, a novel framework that enhances hand pressure estimation by leveraging 3D hand posture information to augment forearm surface electromyography (sEMG) signals. Our approach utilizes detailed spatial information from 3D hand poses in conjunction with dynamic muscle activity from sEMG to enable accurate and robust whole-hand pressure measurements under diverse hand-object interactions. We also developed a multimodal data collection system that combines a pressure glove, an sEMG armband, and a markerless finger-tracking module. We created a comprehensive dataset from 21 participants, capturing synchronized data of hand posture, sEMG signals, and exerted hand pressure across various hand postures and hand-object interaction scenarios using our collection system. Our framework enables precise hand pressure estimation in complex and natural interaction scenarios. Our approach substantially mitigates the limitations of traditional sEMG-based or vision-based methods by integrating 3D hand posture information with sEMG signals.\nVideo demos, data, and code are available online.",
+      "authors": [
+        "Kyungjin Seo",
+        "Junghoon Seo",
+        "Hanseok Jeong",
+        "Sangpil Kim",
+        "Sang Ho Yoon"
+      ],
+      "primary_category": "Hand Pressure Estimation",
+      "categories": [
+        "Hand Pressure Estimation",
+        "Multi-modality",
+        "Hand-Object Interaction"
+      ],
+      "published": "2024-09-25T18:11:04.571+00:00",
+      "link": "https://openreview.net/forum?id=LtS7pP8rEn",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2025-jtf0hyfgil",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "Generalizable Hand-Object Modeling from Monocular RGB Images via 3D Gaussians",
+      "abstract": "Recent advances in hand-object interaction modeling have employed implicit representations, such as Signed Distance Functions (SDF) and Neural Radiance Fields (NeRF) to reconstruct hands and objects with arbitrary topology and photo-realistic detail. However, these methods often rely on dense 3D surface annotations, or are tailored to short clips constrained in motion trajectories and scene contexts, limiting their generalization to diverse environments and movement patterns. In this work, we present HOGS, an adaptively perceptive 3D Gaussian Splatting (3DGS) framework for generalizable hand-object modeling from unconstrained monocular RGB images. By integrating photometric cues from the visual modality with the physically grounded structure of 3D Gaussians, HOGS disentangles inherent geometry from transient lighting and motion-induced appearance changes. This endows hand-object assets with the ability to generalize to unseen environments and dynamic motion patterns. Experiments on two challenging datasets demonstrate that HOGS outperforms state-of-the-art methods in monocular hand-object reconstruction and photo-realistic rendering.",
+      "authors": [
+        "Xingyu Liu",
+        "Pengfei Ren",
+        "Qi Qi",
+        "Haifeng Sun",
+        "Zirui Zhuang",
+        "Jing Wang",
+        "Jianxin Liao",
+        "Jingyu Wang"
+      ],
+      "primary_category": "Hand-object reconstruction",
+      "categories": [
+        "Hand-object reconstruction",
+        "3D Gaussian Splatting"
+      ],
+      "published": "2025-09-18T17:37:57.842+00:00",
+      "link": "https://openreview.net/forum?id=JTF0HYfGiL",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2024-qewibatmnn",
+      "source": "NeurIPS-2024-Accepted",
+      "title": "Grasp as You Say: Language-guided Dexterous Grasp Generation",
+      "abstract": "This paper explores a novel task \"Dexterous Grasp as You Say'' (DexGYS), enabling robots to perform dexterous grasping based on human commands expressed in natural language. However, the development of this field is hindered by the lack of datasets with natural human guidance; thus, we propose a language-guided dexterous grasp dataset, named DexGYSNet, offering high-quality dexterous grasp annotations along with flexible and fine-grained human language guidance. Our dataset construction is cost-efficient, with the carefully-design hand-object interaction retargeting strategy, and the LLM-assisted language guidance annotation system. Equipped with this dataset, we introduce the DexGYSGrasp framework for generating dexterous grasps based on human language instructions, with the capability of producing grasps that are intent-aligned, high quality and diversity. To achieve this capability, our framework decomposes the complex learning process into two manageable progressive objectives and introduce two components to realize them. The first component learns the grasp distribution focusing on intention alignment and generation diversity. And the second component refines the grasp quality while maintaining intention consistency. Extensive experiments are conducted on DexGYSNet and real world environments for validation.",
+      "authors": [
+        "Yi-Lin Wei",
+        "Jian-Jian Jiang",
+        "Chengyi Xing",
+        "Xiantuo Tan",
+        "Xiao-Ming Wu",
+        "Hao Li",
+        "Mark Cutkosky",
+        "Wei-Shi Zheng"
+      ],
+      "primary_category": "Dexterous Grasp Generation",
+      "categories": [
+        "Dexterous Grasp Generation",
+        "Robotics"
+      ],
+      "published": "2024-09-25T18:15:49.153+00:00",
+      "link": "https://openreview.net/forum?id=QeWibaTmnn",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2025-sagzbti9lj",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "Learning Dense Hand Contact Estimation from Imbalanced Data",
+      "abstract": "Hands are essential to human interaction, and exploring contact between hands and the world can promote comprehensive understanding of their function. Recently, there have been growing number of hand interaction datasets that cover interaction with object, other hand, scene, and body. Despite the significance of the task and increasing high-quality data, how to effectively learn dense hand contact estimation remains largely underexplored. There are two major challenges for learning dense hand contact estimation. First, there exists class imbalance issue from hand contact datasets where majority of regions are not in contact. Second, hand contact datasets contain spatial imbalance issue with most of hand contact exhibited in finger tips, resulting in challenges for generalization towards contacts in other hand regions. To tackle these issues, we present a framework that learns dense HAnd COntact estimation (HACO) from imbalanced data. To resolve the class imbalance issue, we introduce balanced contact sampling, which builds and samples from multiple sampling groups that fairly represent diverse contact statistics for both contact and non-contact vertices. Moreover, to address the spatial imbalance issue, we propose vertex-level class-balanced (VCB) loss, which incorporates spatially varying contact distribution by separately reweighting loss contribution of each vertex based on its contact frequency across dataset. As a result, we effectively learn to predict dense hand contact estimation with large-scale hand contact data without suffering from class and spatial imbalance issue. The codes are available at https://github.com/dqj5182/HACO_RELEASE.",
+      "authors": [
+        "Daniel Sungho Jung",
+        "Kyoung Mu Lee"
+      ],
+      "primary_category": "Hand contact estimation",
+      "categories": [
+        "Hand contact estimation",
+        "Hand-object interaction"
+      ],
+      "published": "2025-09-18T17:29:30.362+00:00",
+      "link": "https://openreview.net/forum?id=SAGZBti9lj",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2024-pcj0l1jvux",
+      "source": "NeurIPS-2024-Accepted",
+      "title": "Hamba: Single-view 3D Hand Reconstruction with Graph-guided Bi-Scanning Mamba",
+      "abstract": "3D Hand reconstruction from a single RGB image is challenging due to the articulated motion, self-occlusion, and interaction with objects. Existing SOTA methods employ attention-based transformers to learn the 3D hand pose and shape, yet they do not fully achieve robust and accurate performance, primarily due to inefficiently modeling spatial relations between joints. To address this problem, we propose a novel graph-guided Mamba framework, named Hamba, which bridges graph learning and state space modeling. Our core idea is to reformulate Mamba's scanning into graph-guided bidirectional scanning for 3D reconstruction using a few effective tokens. This enables us to efficiently learn the spatial relationships between joints for improving reconstruction performance. Specifically, we design a Graph-guided State Space (GSS) block that learns the graph-structured relations and spatial sequences of joints and uses 88.5\\% fewer tokens than attention-based methods. Additionally, we integrate the state space features and the global features using a fusion module. By utilizing the GSS block and the fusion module, Hamba effectively leverages the graph-guided state space features and jointly considers global and local features to improve performance. Experiments on several benchmarks and in-the-wild tests demonstrate that Hamba significantly outperforms existing SOTAs, achieving the PA-MPVPE of 5.3mm and F@15mm of 0.992 on FreiHAND. At the time of this paper's acceptance, Hamba holds the top position, Rank 1, in two competition leaderboards on 3D hand reconstruction.",
+      "authors": [
+        "Haoye Dong",
+        "Aviral Chharia",
+        "Wenbo Gou",
+        "Francisco Vicente Carrasco",
+        "Fernando De la Torre"
+      ],
+      "primary_category": "3D Hand Reconstruction",
+      "categories": [
+        "3D Hand Reconstruction",
+        "Mamba",
+        "State Space Model"
+      ],
+      "published": "2024-09-25T18:07:55.781+00:00",
+      "link": "https://openreview.net/forum?id=pCJ0l1JVUX",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2025-pojbw1yqgl",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "Towards Dynamic 3D Reconstruction of Hand-Instrument Interaction in Ophthalmic Surgery",
+      "abstract": "Accurate 3D reconstruction of hands and instruments is critical for vision-based analysis of ophthalmic microsurgery, yet progress has been hampered by the lack of realistic, large-scale datasets and reliable annotation tools. In this work, we introduce OphNet-3D, the first extensive RGB-D dynamic 3D reconstruction dataset for ophthalmic surgery, comprising 41 sequences from 40 surgeons and totaling 7.1 million frames, with fine-grained annotations of 12 surgical phases, 10 instrument categories, dense MANO hand meshes, and full 6-DoF instrument poses. To scalably produce high-fidelity labels, we design a multi-stage automatic annotation pipeline that integrates multi-view data observation, data-driven motion prior with cross-view geometric consistency and biomechanical constraints, along with a combination of collision-aware interaction constraints for instrument interactions. Building upon OphNet-3D, we establish two challenging benchmarks—bimanual hand pose estimation and hand–instrument interaction reconstruction—and propose two dedicated architectures: H-Net for dual-hand mesh recovery and OH-Net for joint reconstruction of two-hand–two-instrument interactions. These models leverage a novel spatial reasoning module with weak-perspective camera modeling and collision-aware center-based representation. Both architectures outperform existing methods by substantial margins, achieving improvements of over 2mm in Mean Per Joint Position Error (MPJPE) and up to 23\\% in ADD-S metrics for hand and instrument reconstruction, respectively.",
+      "authors": [
+        "Ming Hu",
+        "Zhengdi Yu",
+        "Feilong Tang",
+        "Kaiwen Chen",
+        "Yulong Li",
+        "Imran Razzak",
+        "Junjun He",
+        "Tolga Birdal",
+        "Kaijing Zhou",
+        "Zongyuan Ge"
+      ],
+      "primary_category": "3D Reconstruction",
+      "categories": [
+        "3D Reconstruction",
+        "Ophthalmic Surgery",
+        "Hand–Instrument Interaction",
+        "Surgical Vision"
+      ],
+      "published": "2025-09-18T17:30:45.561+00:00",
+      "link": "https://openreview.net/forum?id=pOJBw1YQgL",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2024-mhcnlo2qea",
+      "source": "NeurIPS-2024-Accepted",
+      "title": "Estimating Ego-Body Pose from Doubly Sparse Egocentric Video Data",
+      "abstract": "We study the problem of estimating the body movements of a camera wearer from egocentric videos. Current methods for ego-body pose estimation rely on temporally dense sensor data, such as IMU measurements from spatially sparse body parts like the head and hands. However, we propose that even temporally sparse observations, such as hand poses captured intermittently from egocentric videos during natural or periodic hand movements, can effectively constrain overall body motion. Naively applying diffusion models to generate full-body pose from head pose and sparse hand pose leads to suboptimal results. To overcome this, we develop a two-stage approach that decomposes the problem into temporal completion and spatial completion. First, our method employs masked autoencoders to impute hand trajectories by leveraging the spatiotemporal correlations between the head pose sequence and intermittent hand poses, providing uncertainty estimates. Subsequently, we employ conditional diffusion models to generate plausible full-body motions based on these temporally dense trajectories of the head and hands, guided by the uncertainty estimates from the imputation. The effectiveness of our methods was rigorously tested and validated through comprehensive experiments conducted on various HMD setup with AMASS and Ego-Exo4D datasets. Project page: https://sgchi.github.io/dsposer",
+      "authors": [
+        "Seunggeun Chi",
+        "Pin-Hao Huang",
+        "Enna Sachdeva",
+        "Hengbo Ma",
+        "Karthik Ramani",
+        "Kwonjoon Lee"
+      ],
+      "primary_category": "pose estimation",
+      "categories": [
+        "pose estimation",
+        "egocentric pose estimation."
+      ],
+      "published": "2024-09-25T18:07:09.839+00:00",
+      "link": "https://openreview.net/forum?id=MHCnLo2QeA",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2025-6aaixhco6c",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "RFMPose: Generative Category-level Object Pose Estimation via Riemannian Flow Matching",
+      "abstract": "We introduce RFMPose, a novel generative framework for category-level 6D object pose estimation that learns deterministic pose trajectories through Riemannian Flow Matching (RFM). Existing discriminative approaches struggle with multi-hypothesis predictions (e.g., symmetry ambiguities) and often require specialized network architectures. RFMPose advances this paradigm through three key innovations:\n(1) Ensuring geometric consistency via geodesic interpolation on Riemannian manifolds combined with bi-invariant metric constraints;\n(2) Alleviating symmetry-induced ambiguities through Riemannian Optimal Transport for probability mass redistribution without ad-hoc design;\n(3) Enabling end-to-end likelihood estimation through Hutchinson trace approximation, thereby eliminating auxiliary model dependencies.\nExtensive experiments on the Omni6DPose demonstrate state-of-the-art performance of the proposed method, with significant improvements of $\\textbf{+4.1}$ in $\\mathrm{\\textbf{IoU}_{25}}$ and $\\textbf{+2.4}$  in $\\textbf{5°2cm}$ metrics compared to prior generative approaches. Furthermore, the proposed RFM framework exhibits robust sim-to-real transfer capabilities and facilitates pose tracking extensions with minimal architectural adaptation.",
+      "authors": [
+        "Wenzhe Ouyang",
+        "Qi Ye",
+        "Jinghua Wang",
+        "Zenglin Xu",
+        "Jiming Chen"
+      ],
+      "primary_category": "6D Pose Estimation",
+      "categories": [
+        "6D Pose Estimation",
+        "Riemannian Flow Matching",
+        "Generative Modeling"
+      ],
+      "published": "2025-09-18T17:41:33.003+00:00",
+      "link": "https://openreview.net/forum?id=6aaixHco6C",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2025-t4irkwexhr",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "SingRef6D: Monocular Novel Object Pose Estimation with a Single RGB Reference",
+      "abstract": "Recent 6D pose estimation methods demonstrate notable performance but still face some practical limitations. For instance, many of them rely heavily on sensor depth, which may fail with challenging surface conditions, such as transparent or highly reflective materials. In the meantime, RGB-based solutions provide less robust matching performance in low-light and texture-less scenes due to the lack of geometry information. Motivated by these, we propose **SingRef6D**, a lightweight pipeline requiring only a **single RGB** image as a reference, eliminating the need for costly depth sensors, multi-view image acquisition, or training view synthesis models and neural fields. This enables SingRef6D to remain robust and capable even under resource-limited settings where depth or dense templates are unavailable. Our framework incorporates two key innovations. First, we propose a token-scaler-based fine-tuning mechanism with a novel optimization loss on top of Depth-Anything v2 to enhance its ability to predict accurate depth, even for challenging surfaces. Our results show a 14.41% improvement (in $\\delta_{1.05}$) on REAL275 depth prediction compared to Depth-Anything v2 (with fine-tuned head). Second, benefiting from depth availability, we introduce a depth-aware matching process that effectively integrates spatial relationships within LoFTR, enabling our system to handle matching for challenging materials and lighting conditions. Evaluations of pose estimation on the REAL275, ClearPose, and Toyota-Light datasets show that our approach surpasses state-of-the-art methods, achieving a 6.1% improvement in average recall.",
+      "authors": [
+        "Jiahui Wang",
+        "Haiyue Zhu",
+        "Haoren Guo",
+        "Abdullah Al Mamun",
+        "Cheng Xiang",
+        "Tong Heng LEE"
+      ],
+      "primary_category": "Depth Estimation",
+      "categories": [
+        "Depth Estimation",
+        "6D Pose Estimation",
+        "Novel Object Pose Estimation"
+      ],
+      "published": "2025-09-18T17:36:43.293+00:00",
+      "link": "https://openreview.net/forum?id=t4irkwEXhr",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2024-lgus3wxpxc",
+      "source": "NeurIPS-2024-Accepted",
+      "title": "Seeing Beyond the Crop: Using Language Priors for Out-of-Bounding Box Keypoint Prediction",
+      "abstract": "Accurate estimation of human pose and the pose of interacting objects, like a hockey stick, is crucial for action recognition and performance analysis, particularly in sports. Existing methods capture the object along with the human in the bounding boxes, assuming all keypoints are visible within the bounding box. This necessitates larger bounding boxes to capture the object, introducing unnecessary visual features and hindering performance in real-world cluttered environments. We propose a simple image and text-based multimodal solution TokenCLIPose that addresses this limitation. Our approach focuses solely on human keypoints within the bounding box, treating objects as unseen. TokenCLIPose leverages the rich semantic representations endowed by language for inducing keypoint-specific context, even for occluded keypoints. We evaluate the performance of TokenCLIPose on a real-world Ice-Hockey dataset, and demonstrate its generalizability through zero-shot transfer to a smaller Lacrosse dataset. Additionally, we showcase its flexibility on CrowdPose, a popular occlusion benchmark with keypoints within the bounding box. Our method significantly improves over state-of-the-art approaches on all three datasets, with gains of 4.36\\%, 2.35\\%, and 3.8\\%, respectively.",
+      "authors": [
+        "Bavesh Balaji",
+        "Jerrin Bright",
+        "Yuhao Chen",
+        "Sirisha Rambhatla",
+        "John S. Zelek",
+        "David Anthony Clausi"
+      ],
+      "primary_category": "2D pose estimation",
+      "categories": [
+        "2D pose estimation",
+        "out-of-image keypoint prediction",
+        "multimodal pose estimation",
+        "CLIP"
+      ],
+      "published": "2024-09-25T18:12:28.213+00:00",
+      "link": "https://openreview.net/forum?id=LGus3wXPxc",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2024-bxpa7sn5zq",
+      "source": "NeurIPS-2024-Accepted",
+      "title": "Learning Interaction-aware 3D Gaussian Splatting for One-shot Hand Avatars",
+      "abstract": "In this paper, we propose to create animatable avatars for interacting hands with 3D Gaussian Splatting (GS) and single-image inputs. Existing GS-based methods designed for single subjects often yield unsatisfactory results due to limited input views, various hand poses, and occlusions. To address these challenges, we introduce a novel two-stage interaction-aware GS framework that exploits cross-subject hand priors and refines 3D Gaussians in interacting areas. Particularly, to handle hand variations, we disentangle the 3D presentation of hands into optimization-based identity maps and learning-based latent geometric features and neural texture maps. Learning-based features are captured by trained networks to provide reliable priors for poses, shapes, and textures, while optimization-based identity maps enable efficient one-shot fitting of out-of-distribution hands. Furthermore, we devise an interaction-aware attention module and a self-adaptive Gaussian refinement module. These modules enhance image rendering quality in areas with intra- and inter-hand interactions, overcoming the limitations of existing GS-based methods. Our proposed method is validated via extensive experiments on the large-scale InterHand2.6M dataset, and it significantly improves the state-of-the-art performance in image quality. Code and models will be released upon acceptance.",
+      "authors": [
+        "Xuan Huang",
+        "Hanhui Li",
+        "Wanquan Liu",
+        "Xiaodan Liang",
+        "Yiqiang Yan",
+        "Yuhao Cheng",
+        "CHENQIANG GAO"
+      ],
+      "primary_category": "Gaussian splatting",
+      "categories": [
+        "Gaussian splatting",
+        "interacting-hand avatar",
+        "one-shot learning"
+      ],
+      "published": "2024-09-25T18:09:58.934+00:00",
+      "link": "https://openreview.net/forum?id=BxPa7Sn5Zq",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2025-yokpumjwxc",
+      "source": "NeurIPS-2025-Accepted",
+      "title": "Learning Human-Object Interaction as Groups",
+      "abstract": "Human-Object Interaction Detection (HOI-DET) aims to localize human-object pairs and identify their interactive relationships. To aggregate contextual cues, existing methods typically propagate information across all detected entities via self‑attention mechanisms, or establish message passing between humans and objects with  bipartite graphs. However, they primarily focus on pairwise relationships, overlooking that interactions in real-world scenarios often emerge from collective behaviors ($\\textit{i}.\\textit{e}.$, multiple humans and objects engaging in joint activities). In light of this, we revisit relation modeling from a $\\textit{group}$ view and propose GroupHOI, a framework that propagates contextual information in terms of $\\textit{geometric proximity}$ and $\\textit{semantic similarity}$. To exploit the geometric proximity, humans and objects are grouped into distinct clusters using a learnable proximity estimator based on spatial features derived from bounding boxes. In each group, a soft correspondence is computed via self-attention to aggregate and dispatch contextual cues. To incorporate the semantic similarity, we enhance the vanilla transformer-based interaction decoder with local contextual  cues from HO-pair features. Extensive experiments on HICO-DET and V-COCO benchmarks demonstrate the superiority of GroupHOI over the state-of-the-art methods. It also exhibits leading performance on the more challenging Nonverbal Interaction Detection (NVI-DET) task, which involves varied forms of higher-order interactions within groups.",
+      "authors": [
+        "Jiajun Hong",
+        "Jianan Wei",
+        "Wenguan Wang"
+      ],
+      "primary_category": "human object interaction",
+      "categories": [
+        "human object interaction",
+        "graph models",
+        "visual relationship understanding"
+      ],
+      "published": "2025-09-18T17:30:25.733+00:00",
+      "link": "https://openreview.net/forum?id=yoKpumjWXc",
+      "pdf_url": null,
+      "tags": [
+        "keyword:HOI",
+        "query:HOI"
+      ]
+    },
+    {
+      "id": "openreview-neurips-2024-ea4oxkimp7",
+      "source": "NeurIPS-2024-Accepted",
+      "title": "EgoChoir: Capturing 3D Human-Object Interaction Regions from Egocentric Views",
+      "abstract": "Understanding egocentric human-object interaction (HOI) is a fundamental aspect of human-centric perception, facilitating applications like AR/VR and embodied AI. For the egocentric HOI, in addition to perceiving semantics e.g., ''what'' interaction is occurring, capturing ''where'' the interaction specifically manifests in 3D space is also crucial, which links the perception and operation. Existing methods primarily leverage observations of HOI to capture interaction regions from an exocentric view. However, incomplete observations of interacting parties in the egocentric view introduce ambiguity between visual observations and interaction contents, impairing their efficacy. From the egocentric view, humans integrate the visual cortex, cerebellum, and brain to internalize their intentions and interaction concepts of objects, allowing for the pre-formulation of interactions and making behaviors even when interaction regions are out of sight. In light of this, we propose harmonizing the visual appearance, head motion, and 3D object to excavate the object interaction concept and subject intention, jointly inferring 3D human contact and object affordance from egocentric videos. To achieve this, we present EgoChoir, which links object structures with interaction contexts inherent in appearance and head motion to reveal object affordance, further utilizing it to model human contact. Additionally, a gradient modulation is employed to adopt appropriate clues for capturing interaction regions across various egocentric scenarios. Moreover, 3D contact and affordance are annotated for egocentric videos collected from Ego-Exo4D and GIMO to support the task. Extensive experiments on them demonstrate the effectiveness and superiority of EgoChoir.",
+      "authors": [
+        "Yuhang Yang",
+        "Wei Zhai",
+        "Chengfeng Wang",
+        "Chengjun Yu",
+        "Yang Cao",
+        "Zheng-Jun Zha"
+      ],
+      "primary_category": "egocentric human-object interaction",
+      "categories": [
+        "egocentric human-object interaction",
+        "3D human contact",
+        "3D object affordance",
+        "embodied AI"
+      ],
+      "published": "2024-09-25T18:07:15.834+00:00",
+      "link": "https://openreview.net/forum?id=ea4oxkiMP7",
+      "pdf_url": null,
+      "tags": [
+        "query:HOI"
       ]
     }
   ],
   "queries": [
     {
       "type": "intent_query",
-      "tag": "imu-pose",
-      "paper_tag": "query:imu-pose",
-      "query_text": "Hand pose estimation with IMU sensors for virtual reality",
+      "tag": "HOI",
+      "paper_tag": "query:HOI",
+      "query_text": "Find papers on hand object interaction pose estimation",
       "sim_scores": {
-        "openreview-neurips-2025-flkrx29zy6": {
-          "score": 0.014492753623188406,
-          "rank": 9
-        },
-        "openreview-neurips-2024-j2hzctqbf0": {
-          "score": 0.010526315789473684,
-          "rank": 35
-        }
-      },
-      "ranked": [
-        {
-          "paper_id": "openreview-neurips-2025-flkrx29zy6",
-          "score": 1.0,
-          "star_rating": 5
-        },
-        {
-          "paper_id": "openreview-neurips-2024-j2hzctqbf0",
-          "score": 0.8422090729783037,
-          "star_rating": 4
-        },
-        {
-          "paper_id": "openreview-neurips-2025-ty9n72fz1k",
-          "score": 0.49392712550607265,
-          "star_rating": 3
-        }
-      ]
-    },
-    {
-      "type": "intent_query",
-      "tag": "imu-pose",
-      "paper_tag": "query:imu-pose",
-      "query_text": "IMU based motion capture for full body and hand tracking",
-      "sim_scores": {
-        "openreview-neurips-2025-flkrx29zy6": {
+        "openreview-neurips-2025-jtf0hyfgil": {
           "score": 0.01639344262295082,
           "rank": 1
         },
-        "openreview-neurips-2025-ty9n72fz1k": {
-          "score": 0.011363636363636364,
-          "rank": 28
-        }
-      },
-      "ranked": [
-        {
-          "paper_id": "openreview-neurips-2025-flkrx29zy6",
-          "score": 1.0,
-          "star_rating": 5
-        },
-        {
-          "paper_id": "openreview-neurips-2025-ty9n72fz1k",
-          "score": 0.8798076923076922,
-          "star_rating": 4
-        },
-        {
-          "paper_id": "openreview-neurips-2024-j2hzctqbf0",
-          "score": 0.3668882557771445,
-          "star_rating": 3
-        }
-      ]
-    },
-    {
-      "type": "intent_query",
-      "tag": "imu-pose",
-      "paper_tag": "query:imu-pose",
-      "query_text": "Inertial sensor fusion for accurate human pose estimation",
-      "sim_scores": {
-        "openreview-neurips-2025-flkrx29zy6": {
-          "score": 0.01639344262295082,
-          "rank": 1
-        },
-        "openreview-neurips-2024-j2hzctqbf0": {
+        "openreview-neurips-2025-ggj0qfso5m": {
           "score": 0.016129032258064516,
           "rank": 2
         },
-        "openreview-neurips-2025-ty9n72fz1k": {
-          "score": 0.009900990099009901,
-          "rank": 41
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.014705882352941176,
+          "rank": 8
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.014492753623188406,
+          "rank": 9
+        },
+        "openreview-neurips-2024-bxpa7sn5zq": {
+          "score": 0.014084507042253521,
+          "rank": 11
+        },
+        "openreview-neurips-2025-yokpumjwxc": {
+          "score": 0.0136986301369863,
+          "rank": 13
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.012987012987012988,
+          "rank": 17
+        },
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.0125,
+          "rank": 20
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.012345679012345678,
+          "rank": 21
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.011764705882352941,
+          "rank": 25
+        },
+        "openreview-neurips-2024-lgus3wxpxc": {
+          "score": 0.011494252873563218,
+          "rank": 27
+        },
+        "openreview-neurips-2025-0biuwyjkkm": {
+          "score": 0.011235955056179775,
+          "rank": 29
+        },
+        "openreview-neurips-2024-ea4oxkimp7": {
+          "score": 0.009615384615384616,
+          "rank": 44
         }
       },
       "ranked": [
         {
-          "paper_id": "openreview-neurips-2025-flkrx29zy6",
+          "paper_id": "openreview-neurips-2024-lts7pp8ren",
           "score": 1.0,
           "star_rating": 5
         },
         {
-          "paper_id": "openreview-neurips-2024-j2hzctqbf0",
+          "paper_id": "openreview-neurips-2025-ggj0qfso5m",
+          "score": 1.0,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-neurips-2025-0biuwyjkkm",
           "score": 0.9586435070306036,
           "star_rating": 5
         },
         {
-          "paper_id": "openreview-neurips-2025-ty9n72fz1k",
-          "score": 0.6703296703296702,
+          "paper_id": "openreview-neurips-2025-sagzbti9lj",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-neurips-2024-lgus3wxpxc",
+          "score": 0.8798076923076922,
           "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-6aaixhco6c",
+          "score": 0.8798076923076922,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-jtf0hyfgil",
+          "score": 0.8057498057498057,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-ea4oxkimp7",
+          "score": 0.8057498057498057,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-bxpa7sn5zq",
+          "score": 0.7703788748564866,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-t4irkwexhr",
+          "score": 0.7703788748564866,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-mhcnlo2qea",
+          "score": 0.73604826546003,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-gkhxbasqwm",
+          "score": 0.702712746191007,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-qewibatmnn",
+          "score": 0.6388587937883712,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-pcj0l1jvux",
+          "score": 0.608262108262108,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-pojbw1yqgl",
+          "score": 0.578503688092729,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-yokpumjwxc",
+          "score": 0.46719946719946726,
+          "star_rating": 3
         }
       ]
     },
     {
       "type": "intent_query",
-      "tag": "imu-pose",
-      "paper_tag": "query:imu-pose",
-      "query_text": "Research papers on human pose estimation using inertial measurement units",
+      "tag": "HOI",
+      "paper_tag": "query:HOI",
+      "query_text": "Hand and object pose estimation in interactive scenarios",
       "sim_scores": {
-        "openreview-neurips-2024-j2hzctqbf0": {
-          "score": 0.01639344262295082,
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.03252247488101534,
           "rank": 1
         },
-        "openreview-neurips-2025-flkrx29zy6": {
-          "score": 0.016129032258064516,
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.025567754549556326,
           "rank": 2
+        },
+        "openreview-neurips-2025-jtf0hyfgil": {
+          "score": 0.015873015873015872,
+          "rank": 4
+        },
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.014492753623188406,
+          "rank": 10
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.0136986301369863,
+          "rank": 14
+        },
+        "openreview-neurips-2024-bxpa7sn5zq": {
+          "score": 0.013513513513513514,
+          "rank": 15
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.012658227848101266,
+          "rank": 20
+        },
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.012195121951219513,
+          "rank": 23
+        },
+        "openreview-neurips-2025-yokpumjwxc": {
+          "score": 0.011764705882352941,
+          "rank": 26
+        },
+        "openreview-neurips-2024-lgus3wxpxc": {
+          "score": 0.011627906976744186,
+          "rank": 27
+        },
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.011363636363636364,
+          "rank": 29
+        },
+        "openreview-neurips-2025-0biuwyjkkm": {
+          "score": 0.010752688172043012,
+          "rank": 34
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.010101010101010102,
+          "rank": 40
         }
       },
       "ranked": [
         {
-          "paper_id": "openreview-neurips-2025-flkrx29zy6",
+          "paper_id": "openreview-neurips-2025-jtf0hyfgil",
           "score": 1.0,
           "star_rating": 5
         },
         {
-          "paper_id": "openreview-neurips-2024-j2hzctqbf0",
-          "score": 1.0,
+          "paper_id": "openreview-neurips-2024-lgus3wxpxc",
+          "score": 0.9586435070306036,
           "star_rating": 5
         },
         {
-          "paper_id": "openreview-neurips-2025-ty9n72fz1k",
+          "paper_id": "openreview-neurips-2025-ggj0qfso5m",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-neurips-2025-t4irkwexhr",
+          "score": 0.9185999185999183,
+          "star_rating": 5
+        },
+        {
+          "paper_id": "openreview-neurips-2025-0biuwyjkkm",
+          "score": 0.8798076923076922,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-gkhxbasqwm",
+          "score": 0.8798076923076922,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-6aaixhco6c",
+          "score": 0.8422090729783037,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-bxpa7sn5zq",
+          "score": 0.8422090729783037,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-sagzbti9lj",
+          "score": 0.8057498057498057,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-pcj0l1jvux",
+          "score": 0.7703788748564866,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-lts7pp8ren",
+          "score": 0.73604826546003,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-yokpumjwxc",
           "score": 0.6703296703296702,
           "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-ea4oxkimp7",
+          "score": 0.6703296703296702,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2024-mhcnlo2qea",
+          "score": 0.578503688092729,
+          "star_rating": 4
+        },
+        {
+          "paper_id": "openreview-neurips-2025-pojbw1yqgl",
+          "score": 0.3668882557771445,
+          "star_rating": 3
+        },
+        {
+          "paper_id": "openreview-neurips-2024-qewibatmnn",
+          "score": 0.11772814998621459,
+          "star_rating": 3
         }
       ]
     },
     {
       "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "IMU pose estimation",
-      "sim_scores": {}
-    },
-    {
-      "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "hand pose estimation IMU",
-      "sim_scores": {}
-    },
-    {
-      "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "hand pose tracking with inertial measurement units",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "grasp pose estimation hand object",
       "sim_scores": {
-        "openreview-neurips-2025-flkrx29zy6": {
-          "score": 0.01639344262295082,
-          "rank": 1
+        "openreview-neurips-2025-jtf0hyfgil": {
+          "score": 0.015151515151515152,
+          "rank": 6
         },
-        "openreview-neurips-2024-j2hzctqbf0": {
-          "score": 0.015384615384615385,
-          "rank": 5
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.014925373134328358,
+          "rank": 7
         },
-        "openreview-neurips-2025-ty9n72fz1k": {
-          "score": 0.011111111111111112,
-          "rank": 30
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.014492753623188406,
+          "rank": 9
+        },
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.014285714285714285,
+          "rank": 10
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.013157894736842105,
+          "rank": 16
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.012987012987012988,
+          "rank": 17
+        },
+        "openreview-neurips-2024-qewibatmnn": {
+          "score": 0.01282051282051282,
+          "rank": 18
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.012658227848101266,
+          "rank": 19
+        },
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.0125,
+          "rank": 20
+        },
+        "openreview-neurips-2024-bxpa7sn5zq": {
+          "score": 0.011764705882352941,
+          "rank": 25
+        },
+        "openreview-neurips-2024-lgus3wxpxc": {
+          "score": 0.011363636363636364,
+          "rank": 28
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.01020408163265306,
+          "rank": 38
         }
       }
     },
     {
       "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "human body pose estimation with inertial sensors",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand manipulation",
       "sim_scores": {
-        "openreview-neurips-2025-flkrx29zy6": {
-          "score": 0.01639344262295082,
-          "rank": 1
-        },
-        "openreview-neurips-2024-j2hzctqbf0": {
+        "openreview-neurips-2025-0biuwyjkkm": {
+          "score": 0.013513513513513514,
+          "rank": 14
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand manipulation pose estimation",
+      "sim_scores": {
+        "openreview-neurips-2025-jtf0hyfgil": {
           "score": 0.015873015873015872,
           "rank": 3
         },
-        "openreview-neurips-2025-ty9n72fz1k": {
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.014925373134328358,
+          "rank": 7
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.014492753623188406,
+          "rank": 9
+        },
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.014084507042253521,
+          "rank": 11
+        },
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.013513513513513514,
+          "rank": 14
+        },
+        "openreview-neurips-2024-bxpa7sn5zq": {
+          "score": 0.012987012987012988,
+          "rank": 17
+        },
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.01282051282051282,
+          "rank": 18
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.012345679012345678,
+          "rank": 21
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.011494252873563218,
+          "rank": 27
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.010101010101010102,
+          "rank": 39
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand object contact",
+      "sim_scores": {
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand object contact pose estimation",
+      "sim_scores": {
+        "openreview-neurips-2025-jtf0hyfgil": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.015384615384615385,
+          "rank": 5
+        },
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.014925373134328358,
+          "rank": 7
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.014705882352941176,
+          "rank": 8
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.0136986301369863,
+          "rank": 13
+        },
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.013157894736842105,
+          "rank": 16
+        },
+        "openreview-neurips-2024-bxpa7sn5zq": {
+          "score": 0.01282051282051282,
+          "rank": 18
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.012658227848101266,
+          "rank": 19
+        },
+        "openreview-neurips-2024-lgus3wxpxc": {
+          "score": 0.010869565217391304,
+          "rank": 32
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.010752688172043012,
+          "rank": 33
+        },
+        "openreview-neurips-2025-yokpumjwxc": {
+          "score": 0.009615384615384616,
+          "rank": 44
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand object interaction",
+      "sim_scores": {
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-neurips-2025-0biuwyjkkm": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.015384615384615385,
+          "rank": 5
+        },
+        "openreview-neurips-2025-jtf0hyfgil": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        },
+        "openreview-neurips-2024-qewibatmnn": {
+          "score": 0.014492753623188406,
+          "rank": 9
+        },
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.014285714285714285,
+          "rank": 10
+        },
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.014084507042253521,
+          "rank": 11
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand object interaction pose estimation",
+      "sim_scores": {
+        "openreview-neurips-2025-jtf0hyfgil": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.015384615384615385,
+          "rank": 5
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.014492753623188406,
+          "rank": 9
+        },
+        "openreview-neurips-2024-bxpa7sn5zq": {
+          "score": 0.014084507042253521,
+          "rank": 11
+        },
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.013888888888888888,
+          "rank": 12
+        },
+        "openreview-neurips-2025-yokpumjwxc": {
+          "score": 0.013157894736842105,
+          "rank": 16
+        },
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.01282051282051282,
+          "rank": 18
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.012195121951219513,
+          "rank": 22
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.012048192771084338,
+          "rank": 23
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.011904761904761904,
+          "rank": 24
+        },
+        "openreview-neurips-2024-lgus3wxpxc": {
+          "score": 0.011494252873563218,
+          "rank": 27
+        },
+        "openreview-neurips-2025-0biuwyjkkm": {
+          "score": 0.01,
+          "rank": 40
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand pose estimation",
+      "sim_scores": {
+        "openreview-neurips-2025-pojbw1yqgl": {
+          "score": 0.01639344262295082,
+          "rank": 1
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "hand pose estimation from interaction",
+      "sim_scores": {
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.016129032258064516,
+          "rank": 2
+        },
+        "openreview-neurips-2025-jtf0hyfgil": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.015384615384615385,
+          "rank": 5
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.015151515151515152,
+          "rank": 6
+        },
+        "openreview-neurips-2024-bxpa7sn5zq": {
+          "score": 0.014925373134328358,
+          "rank": 7
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.014285714285714285,
+          "rank": 10
+        },
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.014084507042253521,
+          "rank": 11
+        },
+        "openreview-neurips-2025-yokpumjwxc": {
+          "score": 0.0136986301369863,
+          "rank": 13
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.012195121951219513,
+          "rank": 22
+        },
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.011764705882352941,
+          "rank": 25
+        },
+        "openreview-neurips-2024-lgus3wxpxc": {
+          "score": 0.011111111111111112,
+          "rank": 30
+        },
+        "openreview-neurips-2025-0biuwyjkkm": {
+          "score": 0.010752688172043012,
+          "rank": 33
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.009433962264150943,
+          "rank": 46
+        }
+      }
+    },
+    {
+      "type": "keyword",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "object pose estimation",
+      "sim_scores": {
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.015873015873015872,
+          "rank": 3
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.015625,
+          "rank": 4
+        },
+        "openreview-neurips-2024-lgus3wxpxc": {
+          "score": 0.014084507042253521,
+          "rank": 11
+        },
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.012658227848101266,
+          "rank": 19
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
           "score": 0.012345679012345678,
           "rank": 21
         }
@@ -276,201 +1109,465 @@
     },
     {
       "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "human pose estimation IMU",
+      "tag": "HOI",
+      "paper_tag": "keyword:HOI",
+      "query_text": "object pose estimation in hand manipulation",
       "sim_scores": {
-        "openreview-neurips-2025-flkrx29zy6": {
-          "score": 0.01639344262295082,
-          "rank": 1
-        }
-      }
-    },
-    {
-      "type": "keyword",
-      "tag": "imu-pose",
-      "paper_tag": "keyword:imu-pose",
-      "query_text": "pose estimation using inertial measurement units",
-      "sim_scores": {
-        "openreview-neurips-2024-j2hzctqbf0": {
-          "score": 0.01639344262295082,
-          "rank": 1
+        "openreview-neurips-2025-jtf0hyfgil": {
+          "score": 0.015151515151515152,
+          "rank": 6
         },
-        "openreview-neurips-2025-flkrx29zy6": {
-          "score": 0.015625,
-          "rank": 4
+        "openreview-neurips-2025-ggj0qfso5m": {
+          "score": 0.014705882352941176,
+          "rank": 8
+        },
+        "openreview-neurips-2024-pcj0l1jvux": {
+          "score": 0.013513513513513514,
+          "rank": 14
+        },
+        "openreview-neurips-2025-sagzbti9lj": {
+          "score": 0.012987012987012988,
+          "rank": 17
+        },
+        "openreview-neurips-2025-6aaixhco6c": {
+          "score": 0.012658227848101266,
+          "rank": 19
+        },
+        "openreview-neurips-2024-mhcnlo2qea": {
+          "score": 0.012345679012345678,
+          "rank": 21
+        },
+        "openreview-neurips-2024-bxpa7sn5zq": {
+          "score": 0.012048192771084338,
+          "rank": 23
+        },
+        "openreview-neurips-2024-gkhxbasqwm": {
+          "score": 0.011904761904761904,
+          "rank": 24
+        },
+        "openreview-neurips-2025-t4irkwexhr": {
+          "score": 0.011363636363636364,
+          "rank": 28
+        },
+        "openreview-neurips-2024-lts7pp8ren": {
+          "score": 0.011111111111111112,
+          "rank": 30
+        },
+        "openreview-neurips-2024-qewibatmnn": {
+          "score": 0.009900990099009901,
+          "rank": 41
+        },
+        "openreview-neurips-2025-0biuwyjkkm": {
+          "score": 0.009345794392523364,
+          "rank": 47
+        },
+        "openreview-neurips-2024-lgus3wxpxc": {
+          "score": 0.009259259259259259,
+          "rank": 48
         }
       }
     }
   ],
   "global_candidate_ids": [
-    "openreview-neurips-2025-ggj0qfso5m",
-    "openreview-neurips-2025-stmb6q9pyz",
-    "openreview-neurips-2025-flkrx29zy6",
-    "openreview-neurips-2024-mhcnlo2qea",
-    "openreview-neurips-2024-j2hzctqbf0",
-    "openreview-neurips-2025-m3zxsdl2rk",
-    "openreview-neurips-2025-6aaixhco6c",
-    "openreview-neurips-2024-lbxsp79ocd",
-    "openreview-neurips-2025-wxo0dlsaif",
-    "openreview-neurips-2025-nz4mfzczix",
-    "openreview-neurips-2024-ftpkguxefy",
-    "openreview-neurips-2024-rrtjcbcheh",
-    "openreview-neurips-2024-ggijeosljq",
-    "openreview-neurips-2024-xxy8d4rnsb",
-    "openreview-neurips-2025-n3armutfit",
-    "openreview-neurips-2024-rm24uugzg8",
-    "openreview-neurips-2025-vcrc99edtz",
-    "openreview-neurips-2024-rkot8ramrr",
-    "openreview-neurips-2025-t4irkwexhr",
-    "openreview-neurips-2024-xse8qmgnym",
-    "openreview-neurips-2025-u8sxx5ite6",
-    "openreview-neurips-2024-p2po2pupfy",
-    "openreview-neurips-2024-6fyh6gxzpf",
-    "openreview-neurips-2025-9ghaldornl",
-    "openreview-neurips-2025-zy5mzxlnca",
-    "openreview-neurips-2025-0nexr6ldig",
-    "openreview-neurips-2025-edpklrzzvu",
-    "openreview-neurips-2024-iwntinpxft",
-    "openreview-neurips-2024-fisyqfojcm",
-    "openreview-neurips-2025-ob5ghrsfi4",
-    "openreview-neurips-2024-wgpmdyjgsg",
-    "openreview-neurips-2024-6iyya4getn",
-    "openreview-neurips-2024-nw8cxonvep",
-    "openreview-neurips-2024-nu54mokwla",
-    "openreview-neurips-2025-bntezdplfh",
-    "openreview-neurips-2024-lts7pp8ren",
-    "openreview-neurips-2025-onvisnpqbt",
-    "openreview-neurips-2024-btllwaorfs",
-    "openreview-neurips-2025-ty9n72fz1k",
     "openreview-neurips-2025-jtf0hyfgil",
-    "openreview-neurips-2025-yaf2akj1wm",
-    "openreview-neurips-2025-bxelejg3ve",
-    "openreview-neurips-2025-vzvomvpsyc",
-    "openreview-neurips-2025-sujwddyspc",
-    "openreview-neurips-2024-pcj0l1jvux",
+    "openreview-neurips-2025-ggj0qfso5m",
+    "openreview-neurips-2024-lts7pp8ren",
     "openreview-neurips-2025-cb8jwne2vv",
-    "openreview-neurips-2024-nt8z5njwxf",
-    "openreview-neurips-2025-huzzy5w2js",
-    "openreview-neurips-2025-c0c943r6zj",
-    "openreview-neurips-2025-sagzbti9lj",
-    "openreview-neurips-2025-qjsrgycf4b",
-    "openreview-neurips-2024-pqlkliexyj",
-    "openreview-neurips-2025-vzwjhxe8pf",
-    "openreview-neurips-2024-gyqs5z4joa",
-    "openreview-neurips-2024-gkhxbasqwm",
-    "openreview-neurips-2024-fxei3lvflp",
-    "openreview-neurips-2025-4puumnqxdg",
-    "openreview-neurips-2025-gqhuet0v6f",
-    "openreview-neurips-2024-9b6j64etp4",
-    "openreview-neurips-2025-inepyclgv2",
+    "openreview-neurips-2025-stmb6q9pyz",
+    "openreview-neurips-2025-bmrnz1tpcc",
     "openreview-neurips-2025-pdrf0o7baq",
-    "openreview-neurips-2024-bxpa7sn5zq",
-    "openreview-neurips-2025-2845h8ua5d",
-    "openreview-neurips-2025-wabvvqktuf",
-    "openreview-neurips-2025-xdttwmjhag",
-    "openreview-neurips-2025-ou9heyvnhb",
-    "openreview-neurips-2025-t1gvxvbkb1",
-    "openreview-neurips-2025-ig5mtz8etr",
-    "openreview-neurips-2024-tgozvltdy3",
-    "openreview-neurips-2025-vefpm6gw2s",
-    "openreview-neurips-2024-sfpxuqzdpi",
-    "openreview-neurips-2025-zr2mdbrhjx",
-    "openreview-neurips-2025-gvq2afuvea",
-    "openreview-neurips-2024-ldvfayzg35",
-    "openreview-neurips-2025-sv1pbyc8zt",
-    "openreview-neurips-2025-y9adtccegi",
-    "openreview-neurips-2025-vdv912fa3t",
-    "openreview-neurips-2024-1we1v3mahd",
-    "openreview-neurips-2024-ekhqbgvl3g",
-    "openreview-neurips-2024-bzgaelyoyl",
-    "openreview-neurips-2024-gagwqhobig",
-    "openreview-neurips-2025-t64fa2hczn",
-    "openreview-neurips-2025-0biuwyjkkm",
-    "openreview-neurips-2025-appnmuunhx",
-    "openreview-neurips-2025-qug74vcsxf",
-    "openreview-neurips-2024-aujnnniiim",
-    "openreview-neurips-2024-lezaeimfoc",
-    "openreview-neurips-2025-fgutn7huo5",
-    "openreview-neurips-2024-bjrbalodrj",
+    "openreview-neurips-2025-inepyclgv2",
+    "openreview-neurips-2025-sagzbti9lj",
+    "openreview-neurips-2025-huzzy5w2js",
     "openreview-neurips-2025-pojbw1yqgl",
-    "openreview-neurips-2024-ga8tvtxudf",
-    "openreview-neurips-2025-i7y7mgsego",
+    "openreview-neurips-2024-mhcnlo2qea",
+    "openreview-neurips-2024-ftpkguxefy",
+    "openreview-neurips-2024-lbxsp79ocd",
+    "openreview-neurips-2024-pcj0l1jvux",
+    "openreview-neurips-2025-6aaixhco6c",
+    "openreview-neurips-2025-u8sxx5ite6",
+    "openreview-neurips-2025-t4irkwexhr",
+    "openreview-neurips-2025-wxo0dlsaif",
+    "openreview-neurips-2024-6fyh6gxzpf",
+    "openreview-neurips-2024-gkhxbasqwm",
+    "openreview-neurips-2024-xxy8d4rnsb",
+    "openreview-neurips-2024-bxpa7sn5zq",
+    "openreview-neurips-2024-9b6j64etp4",
+    "openreview-neurips-2025-n3armutfit",
+    "openreview-neurips-2025-nz4mfzczix",
+    "openreview-neurips-2025-im8154ljcx",
+    "openreview-neurips-2025-vzvomvpsyc",
+    "openreview-neurips-2024-rm24uugzg8",
+    "openreview-neurips-2024-lgus3wxpxc",
+    "openreview-neurips-2025-zy5mzxlnca",
+    "openreview-neurips-2024-nu54mokwla",
+    "openreview-neurips-2024-ggijeosljq",
+    "openreview-neurips-2025-bntezdplfh",
+    "openreview-neurips-2025-vcrc99edtz",
+    "openreview-neurips-2025-ou9heyvnhb",
+    "openreview-neurips-2024-wgpmdyjgsg",
+    "openreview-neurips-2025-0biuwyjkkm",
+    "openreview-neurips-2024-iwntinpxft",
+    "openreview-neurips-2025-yfasd68nyi",
+    "openreview-neurips-2025-wabvvqktuf",
+    "openreview-neurips-2025-edpklrzzvu",
     "openreview-neurips-2025-yokpumjwxc",
-    "openreview-neurips-2024-4pcu9c8lex",
+    "openreview-neurips-2024-fxei3lvflp",
     "openreview-neurips-2024-7su2gfqvmn",
-    "openreview-neurips-2024-hzanl2uncb",
-    "openreview-neurips-2024-ea4oxkimp7",
-    "openreview-neurips-2025-a3ezgit0ub",
-    "openreview-neurips-2024-cx2o6xz03h",
-    "openreview-neurips-2025-lf0w2gmnbg",
-    "openreview-neurips-2024-3rtn1omtc4",
-    "openreview-neurips-2025-ytwrzp8mno",
+    "openreview-neurips-2024-p2po2pupfy",
+    "openreview-neurips-2024-nw8cxonvep",
+    "openreview-neurips-2024-6iyya4getn",
+    "openreview-neurips-2024-rrtjcbcheh",
+    "openreview-neurips-2024-xse8qmgnym",
+    "openreview-neurips-2024-wrd9lcbvxn",
+    "openreview-neurips-2025-0nexr6ldig",
+    "openreview-neurips-2025-wjyvhsjxrp",
+    "openreview-neurips-2024-qewibatmnn",
+    "openreview-neurips-2025-2845h8ua5d",
     "openreview-neurips-2025-hio3t2owhb",
-    "openreview-neurips-2024-nqcknm6tes",
-    "openreview-neurips-2025-kp9b9iqdit",
+    "openreview-neurips-2025-zr2mdbrhjx",
+    "openreview-neurips-2025-yaf2akj1wm",
+    "openreview-neurips-2025-wzzc5rpdy1",
     "openreview-neurips-2025-yvocwqf9k2",
-    "openreview-neurips-2025-fooiwsneh9"
+    "openreview-neurips-2025-m3zxsdl2rk",
+    "openreview-neurips-2025-fmua6bkscb",
+    "openreview-neurips-2025-kn2umevuob",
+    "openreview-neurips-2025-qjee4tibgz",
+    "openreview-neurips-2025-ftzeltgark",
+    "openreview-neurips-2024-4pcu9c8lex",
+    "openreview-neurips-2025-2aioeg2hwz",
+    "openreview-neurips-2025-cjcm5lyvwm",
+    "openreview-neurips-2025-appnmuunhx",
+    "openreview-neurips-2024-j2hzctqbf0",
+    "openreview-neurips-2025-enjhsqvkxh",
+    "openreview-neurips-2024-nvydpf4ljk",
+    "openreview-neurips-2025-t1gvxvbkb1",
+    "openreview-neurips-2025-mk9ykil8ep",
+    "openreview-neurips-2025-exikfm1q9r",
+    "openreview-neurips-2025-m5wrqqcwbn",
+    "openreview-neurips-2025-zz09ox2xpo",
+    "openreview-neurips-2024-0sjbw05a2w",
+    "openreview-neurips-2024-glt37xou7e",
+    "openreview-neurips-2024-9hkn99rndr",
+    "openreview-neurips-2025-2dwp12hmyi",
+    "openreview-neurips-2024-p3hnrpewme",
+    "openreview-neurips-2024-qdyts5dygq",
+    "openreview-neurips-2025-yh4dpshiwz",
+    "openreview-neurips-2024-1ptdkwzbmg",
+    "openreview-neurips-2024-claosszt6v",
+    "openreview-neurips-2024-kjnezwriqn",
+    "openreview-neurips-2025-2h8bfmeqwh",
+    "openreview-neurips-2025-9zwl2ly28n",
+    "openreview-neurips-2025-kxjd4jxf34",
+    "openreview-neurips-2025-r2geby4mnu",
+    "openreview-neurips-2024-hkbhx5abjk",
+    "openreview-neurips-2025-p2yimjp5b1",
+    "openreview-neurips-2025-pqyaznkeyo",
+    "openreview-neurips-2024-folnl52q5u",
+    "openreview-neurips-2024-qkp3nhpu41",
+    "openreview-neurips-2025-lf0w2gmnbg",
+    "openreview-neurips-2025-o8r3goftqo",
+    "openreview-neurips-2025-fdx7eb9cdv",
+    "openreview-neurips-2025-sopsi570ap",
+    "openreview-neurips-2024-3og0ft85b2",
+    "openreview-neurips-2025-xkgkmfn4ja",
+    "openreview-neurips-2025-vdv912fa3t",
+    "openreview-neurips-2025-eatrrceou9",
+    "openreview-neurips-2024-k5pa3sk2jb",
+    "openreview-neurips-2024-vh7gcadhao",
+    "openreview-neurips-2024-jz5zmen9he",
+    "openreview-neurips-2024-gvtkmsaagi",
+    "openreview-neurips-2024-shjwt0n7kx",
+    "openreview-neurips-2025-qug74vcsxf",
+    "openreview-neurips-2024-pehvscmsgg",
+    "openreview-neurips-2025-crxzkxskow",
+    "openreview-neurips-2025-kmv7yg6qxv",
+    "openreview-neurips-2025-kp9b9iqdit",
+    "openreview-neurips-2024-ea4oxkimp7",
+    "openreview-neurips-2025-qtpe7altlq",
+    "openreview-neurips-2025-qjsrgycf4b",
+    "openreview-neurips-2024-gyqs5z4joa"
   ],
   "global_pool_lane_top_k": 30,
   "global_pool_limit": 120,
   "global_pool_guaranteed_per_lane": 2,
-  "global_pool_effective_size": 107,
-  "reranked_at": "2026-06-04T07:23:23.609561+00:00",
+  "global_pool_effective_size": 118,
+  "reranked_at": "2026-06-04T07:41:11.617873+00:00",
   "llm_ranked": [
     {
-      "paper_id": "openreview-neurips-2025-flkrx29zy6",
+      "paper_id": "openreview-neurips-2024-ea4oxkimp7",
       "score": 9.0,
-      "evidence_en": "Sparse IMUs with ToF sensor fusion for 3D full-body pose estimation",
-      "evidence_cn": "稀疏IMU与ToF传感器融合实现3D全身姿态估计",
-      "canonical_evidence": "稀疏IMU与ToF传感器融合实现3D全身姿态估计",
-      "tldr_en": "ToF-IP integrates Time-of-Flight sensors with sparse IMUs to mitigate error accumulation in inertial-based human motion capture, enabling real-time 3D full-body pose estimation. The method leverages direct distance measurements from ToF sensors to avoid drift from IMU integration.",
-      "tldr_cn": "该论文针对稀疏惯性测量单元（IMU）在人体运动捕捉中因漂移和噪声导致的误差累积问题，提出ToF-IP系统，将飞行时间（ToF）传感器与稀疏IMU相结合，利用ToF直接距离测量替代IMU的时间积分，有效抑制漂移。实验表明该方法能实现实时、准确的3D全身姿态估计，同时保持可穿戴设备的便携性。该工作为低成本、低漂移的IMU姿态估计提供了新思路。",
-      "title_zh": "ToF-IP：飞行时间增强的稀疏惯性定位器用于实时人体运动捕捉",
-      "motivation_cn": "稀疏IMU用于人体运动追踪时存在漂移和噪声导致的误差累积问题。",
-      "method_cn": "提出ToF-IP，将ToF传感器与稀疏IMU集成，利用ToF直接距离测量修正IMU积分误差，实现实时全身姿态估计。",
-      "result_cn": "实验证明该方法能有效减少漂移，实现高精度实时3D全身姿态估计。",
-      "conclusion_cn": "该工作表明ToF与IMU融合是提高IMU姿态估计精度的有效途径，并保持便携优势。",
+      "evidence_en": "egocentric human-object interaction 3D region capture",
+      "evidence_cn": "自我中心视角的人-物交互3D区域捕捉",
+      "canonical_evidence": "自我中心视角的人-物交互3D区域捕捉",
+      "tldr_en": "EgoChoir captures 3D human-object interaction regions from egocentric views, enabling precise localization of interaction manifestation in space.",
+      "tldr_cn": "针对自我中心视角下人-物交互（HOI）的不完整观察导致歧义的问题，本文提出EgoChoir方法，从自我中心视角捕捉3D交互区域。该方法利用视觉和运动线索，在3D空间中准确定位交互发生的位置。实验表明，EgoChoir在多个数据集上优于现有方法，为增强现实和具身AI提供了关键的空间感知能力。",
+      "title_zh": "EgoChoir：从自我中心视角捕捉3D人-物交互区域",
+      "motivation_cn": "现有方法主要从外部视角捕捉交互区域，但自我中心视角下观察不完整导致歧义。",
+      "method_cn": "提出EgoChoir，结合视觉和运动线索从自我中心视频中推断3D交互区域。",
+      "result_cn": "在多个数据集上显著优于现有方法，准确捕捉交互空间位置。",
+      "conclusion_cn": "EgoChoir有效解决了自我中心HOI的区域捕捉问题，支持AR/VR应用。",
       "matched_requirement_id": "req-1",
-      "matched_query_tag": "query:imu-pose",
-      "matched_query_text": "pose estimation using inertial measurement units"
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand object interaction pose estimation"
     },
     {
-      "paper_id": "openreview-neurips-2024-j2hzctqbf0",
+      "paper_id": "openreview-neurips-2025-ggj0qfso5m",
       "score": 9.0,
-      "evidence_en": "directly addresses inertial pose estimation using IMU data",
-      "evidence_cn": "直接利用惯性传感器数据进行姿态估计",
-      "canonical_evidence": "直接利用惯性传感器数据进行姿态估计",
-      "tldr_en": "This paper proposes a Sequence Structure Module (SSM) that enhances Transformers for inertial pose estimation by leveraging fixed-length structural patterns in IMU sequences, achieving accurate and steady pose tracking.",
-      "tldr_cn": "针对Transformer在处理固定长度惯性序列时未能显式利用结构模式的问题，本文提出序列结构学习与调制方法，通过引入序列结构模块（SSM）调整Transformer输入特征，使其能够建模并利用惯性传感器读数中的固定结构信息。在惯性姿态估计任务上，该方法显著提升了估计的准确性和稳定性，为基于IMU的人体姿态估计提供了一种有效的序列建模新范式。",
-      "title_zh": "通过序列结构学习与调制实现准确稳定的惯性姿态估计",
-      "motivation_cn": "现有Transformer缺乏利用固定长度惯性序列结构模式的能力，导致姿态估计精度和稳定性不足。",
-      "method_cn": "提出序列结构模块（SSM），通过学习或先验指定固定长度惯性读数的结构信息，调制Transformer输入特征。",
-      "result_cn": "在惯性姿态估计任务上，该方法相比基线取得了更高的准确性和稳定性。",
-      "conclusion_cn": "所提方法有效提升了Transformer对惯性序列结构信息的利用，为IMU姿态估计提供了有力工具。",
+      "evidence_en": "multimodal egocentric hand-object interaction motion generation",
+      "evidence_cn": "多模态自我中心手-物交互运动生成",
+      "canonical_evidence": "多模态自我中心手-物交互运动生成",
+      "tldr_en": "MEgoHand generates physically plausible hand-object interactions from egocentric RGB, text, and initial hand pose, overcoming viewpoint and occlusion challenges.",
+      "tldr_cn": "针对自我中心手-物交互运动生成中视角不稳定、自遮挡和物体泛化限制等问题，本文提出MEgoHand多模态框架。它融合RGB、文本和初始手部姿态，通过双向关联建模手-物相关性，生成物理合理的交互运动。实验证明MEgoHand在生成质量和泛化性上优于现有方法，为虚拟现实和机器人模仿提供了新方案。",
+      "title_zh": "MEgoHand：多模态自我中心手-物交互运动生成",
+      "motivation_cn": "现有方法依赖预定义3D物体先验，限制了对新颖物体的泛化能力。",
+      "method_cn": "提出MEgoHand，利用多模态输入和双向关联模块建模手-物交互。",
+      "result_cn": "在多个基准上生成更真实且泛化性更强的交互运动。",
+      "conclusion_cn": "MEgoHand有效解决了自我中心HOI运动生成的泛化问题。",
       "matched_requirement_id": "req-1",
-      "matched_query_tag": "query:imu-pose",
-      "matched_query_text": "pose estimation using inertial measurement units"
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand object interaction pose estimation"
     },
     {
-      "paper_id": "openreview-neurips-2025-ty9n72fz1k",
-      "score": 6.0,
-      "evidence_en": "uses IMU signals with a Transformer for activity recognition",
-      "evidence_cn": "使用IMU信号和Transformer进行活动识别",
-      "canonical_evidence": "使用IMU信号和Transformer进行活动识别",
-      "tldr_en": "MoPFormer tokenizes IMU signals into motion primitives using a Transformer for interpretable human activity recognition, achieving strong cross-dataset generalization.",
-      "tldr_cn": "针对可穿戴传感器活动识别可解释性差的问题，提出MoPFormer框架，将惯性测量单元信号离散化为运动原语，并通过Transformer编码时间依赖。实验证明该方法在多个基准数据集上取得优异表现，且跨数据集泛化能力强。该方法为IMU信号处理提供了新思路，可迁移至姿态估计等任务。",
-      "title_zh": "MoPFormer: 用于可穿戴传感器活动识别的运动原语变换器",
-      "motivation_cn": "可穿戴传感器活动识别缺乏可解释性，跨数据集泛化差。",
-      "method_cn": "将IMU信号分词化为运动原语，利用Transformer学习时间表征。",
-      "result_cn": "在多个数据集上提升活动识别准确性和泛化性能。",
-      "conclusion_cn": "运动原语化方法为IMU数据提供可解释表示，可支持姿态估计。",
+      "paper_id": "openreview-neurips-2025-pojbw1yqgl",
+      "score": 9.0,
+      "evidence_en": "hand-instrument interaction 3D reconstruction with hand meshes and instrument poses",
+      "evidence_cn": "手-器械交互3D重建，包含手部网格和器械姿态",
+      "canonical_evidence": "手-器械交互3D重建，包含手部网格和器械姿态",
+      "tldr_en": "OphNet-3D provides a large-scale RGB-D dataset for dynamic 3D reconstruction of hand-instrument interaction in ophthalmic surgery, with automatic annotation pipeline.",
+      "tldr_cn": "针对眼科显微手术中手-器械交互3D重建缺乏数据集的问题，本文提出OphNet-3D，包含41个序列、710万帧，标注了手部MANO网格和6D器械姿态。设计多阶段自动标注流程，利用多视图数据、运动先验和几何约束生成高精度标签。该数据集将推动手术场景中手物交互的研究。",
+      "title_zh": "面向眼科手术中手-器械交互的动态3D重建",
+      "motivation_cn": "眼科手术中缺乏大规模、高保真的手-器械3D重建数据集。",
+      "method_cn": "构建包含密集手部网格和器械姿态的数据集，并设计自动标注流水线。",
+      "result_cn": "数据集规模大、标注精度高，支持多种手术分析任务。",
+      "conclusion_cn": "OphNet-3D将促进手术场景中手物交互的3D感知研究。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand object interaction pose estimation"
+    },
+    {
+      "paper_id": "openreview-neurips-2025-jtf0hyfgil",
+      "score": 8.0,
+      "evidence_en": "generalizable hand-object modeling from monocular images, includes pose",
+      "evidence_cn": "从单目图像进行通用手物建模，隐含姿态估计",
+      "canonical_evidence": "从单目图像进行通用手物建模，隐含姿态估计",
+      "tldr_en": "Proposes HOGS, a 3D Gaussian Splatting framework for hand-object modeling from monocular RGB images, achieving generalization across diverse environments.",
+      "tldr_cn": "现有手物交互建模方法依赖密集标注或受限短视频，泛化能力差。本文提出HOGS，基于3D高斯泼溅框架，从单目RGB图像实现通用手物建模。通过融合视觉光度线索与物理结构，方法在多样化场景下鲁棒重建手和物体。实验证明HOGS在新环境和新动作上均优于现有方法，为手物交互姿态估计提供了高效的可泛化方案。",
+      "title_zh": "基于3D高斯的单目RGB图像通用手物建模",
+      "motivation_cn": "现有手物建模方法依赖密集标注或受限场景，无法泛化到多样化环境。",
+      "method_cn": "提出自适应3D高斯泼溅框架，结合视觉光度线索与物理结构进行建模。",
+      "result_cn": "在多个数据集上优于现有方法，泛化到未见场景和动作。",
+      "conclusion_cn": "提供了一种可泛化的手物交互建模方法，可用于姿态估计等下游任务。",
+      "matched_requirement_id": "req-1",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand object interaction pose estimation"
+    },
+    {
+      "paper_id": "openreview-neurips-2024-bxpa7sn5zq",
+      "score": 8.0,
+      "evidence_en": "interaction-aware hand avatars from single image, involves hand pose",
+      "evidence_cn": "从单张图像创建交互手的可动画化身，涉及手部姿态估计",
+      "canonical_evidence": "从单张图像创建交互手的可动画化身，涉及手部姿态估计",
+      "tldr_en": "Proposes a two-stage interaction-aware 3D Gaussian Splatting framework for one-shot hand avatars, capturing hand poses and refinement in interacting areas.",
+      "tldr_cn": "现有基于高斯泼溅的方法在单张输入下难以处理交互手部姿态和遮挡。本文提出两阶段交互感知框架，利用跨手先验和可学习特征，解耦身份与姿态，并在交互区域精细化高斯。实验表明该方法能从单张图像生成高质量可动画双手化身，有效处理交互姿态。该工作直接服务于交互场景中的手部姿态估计和建模。",
+      "title_zh": "学习交互感知的3D高斯泼溅用于单次手部化身",
+      "motivation_cn": "单张图像下交互手部因姿态多样和遮挡，现有方法效果差。",
+      "method_cn": "两阶段交互感知高斯泼溅框架，解耦身份与姿态，优化交互区域。",
+      "result_cn": "生成高保真可动画双手化身，在交互姿态下优于现有方法。",
+      "conclusion_cn": "为交互手部建模提供有效方案，可支撑手部姿态估计任务。",
       "matched_requirement_id": "req-2",
-      "matched_query_tag": "query:imu-pose",
-      "matched_query_text": "human body pose estimation with inertial sensors"
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand pose estimation from interaction"
+    },
+    {
+      "paper_id": "openreview-neurips-2024-lgus3wxpxc",
+      "score": 8.0,
+      "evidence_en": "human and interacting object pose estimation using language priors, directly relevant to hand-object interaction pose estimation",
+      "evidence_cn": "使用语言先验估计人体和交互物体的姿态，直接相关手物交互中的姿态估计",
+      "canonical_evidence": "使用语言先验估计人体和交互物体的姿态，直接相关手物交互中的姿态估计",
+      "tldr_en": "TokenCLIPose predicts human and object keypoints even when object is outside bounding box using language priors, enabling accurate pose estimation of interacting objects like hockey sticks in sports.",
+      "tldr_cn": "现有交互姿态估计方法需要将物体与人体同框，导致引入干扰且限制性能。该论文提出TokenCLIPose，仅利用框内人体关键点，结合CLIP语言先验预测框外物体关键点。在体育数据集上实验表明，该方法能准确估计交互物体（如曲棍球杆）的6D姿态，显著提升动作识别精度。语言先验的引入使得模型无需依赖物体可见性，拓展了交互姿态估计的适用范围。",
+      "title_zh": "超越裁剪：使用语言先验进行边界框外关键点预测",
+      "motivation_cn": "现有方法将交互物体与人同框，引入噪声且限制边界框大小，影响性能。",
+      "method_cn": "提出TokenCLIPose，基于框内人体关键点，利用CLIP语言先验直接预测框外物体关键点。",
+      "result_cn": "在体育动作数据集上，准确预测曲棍球杆等物体姿态，优于传统同框方法。",
+      "conclusion_cn": "语言先验有效替代物体显式可见性，提升交互姿态估计的鲁棒性和实用性。",
+      "matched_requirement_id": "req-8",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "Hand and object pose estimation in interactive scenarios"
+    },
+    {
+      "paper_id": "openreview-neurips-2024-pcj0l1jvux",
+      "score": 8.0,
+      "evidence_en": "3D hand reconstruction from single image with object interaction",
+      "evidence_cn": "单视图3D手部重建，考虑物体交互",
+      "canonical_evidence": "单视图3D手部重建，考虑物体交互",
+      "tldr_en": "Proposes Hamba, a graph-guided Mamba for single-view 3D hand reconstruction, efficiently modeling spatial joint relations for robust pose and shape.",
+      "tldr_cn": "针对单目3D手部重建中关节空间关系建模效率低的问题，提出图引导的Mamba框架Hamba，创新地将Mamba扫描重构为图引导的双向扫描，仅用少量token便高效学习关节间空间关系，在多个基准数据集上取得最先进的重建精度，尤其在严重遮挡和物体交互场景中表现突出，为手物交互中的手部姿态估计提供了强大工具。",
+      "title_zh": "Hamba：基于图引导双向扫描Mamba的单视图3D手部重建",
+      "motivation_cn": "现有方法未能有效建模关节间的空间关系，导致重建精度受限。",
+      "method_cn": "提出图引导的Mamba框架，将Mamba扫描重构为图引导的双向扫描，用少量token学习关节空间关系。",
+      "result_cn": "在多个基准上取得最先进的重建精度，尤其在遮挡和交互场景中表现优异。",
+      "conclusion_cn": "Hamba验证了图学习与状态空间模型结合在3D手部重建中的有效性，为手物交互任务奠定基础。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand pose estimation from interaction"
+    },
+    {
+      "paper_id": "openreview-neurips-2025-sagzbti9lj",
+      "score": 8.0,
+      "evidence_en": "Dense hand contact estimation from imbalanced data",
+      "evidence_cn": "从非平衡数据中学习密集手部接触估计",
+      "canonical_evidence": "从非平衡数据中学习密集手部接触估计",
+      "tldr_en": "Addresses class and spatial imbalance in hand contact datasets, proposing a method to learn dense contact maps for better hand-object interaction understanding.",
+      "tldr_cn": "针对手部接触数据集中的类别不平衡和指尖空间不平衡两大挑战，提出一种有效学习密集手部接触估计的方法，通过设计特殊的采样和损失函数，利用现有多种接触数据集进行训练，能够准确预测手与物体、场景等的接触区域，为手物交互中的接触建模提供关键支撑，促进对手部功能的全面理解。",
+      "title_zh": "从非平衡数据中学习密集手部接触估计",
+      "motivation_cn": "手部接触估计面临类别和空间不平衡两大挑战，影响学习效果。",
+      "method_cn": "提出应对两类不平衡的训练策略和网络设计，充分利用现有接触数据集。",
+      "result_cn": "在多个接触数据上取得准确密集接触图，有效改善手部功能理解。",
+      "conclusion_cn": "该方法为手物交互中的接触估计提供了可行方案，促进了对手部功能的全面理解。",
+      "matched_requirement_id": "req-6",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand object contact pose estimation"
+    },
+    {
+      "paper_id": "openreview-neurips-2025-0biuwyjkkm",
+      "score": 8.0,
+      "evidence_en": "Open-world hand-object interaction synthesis with MLLM",
+      "evidence_cn": "基于多模态大语言模型的开放世界手物交互合成",
+      "canonical_evidence": "基于多模态大语言模型的开放世界手物交互合成",
+      "tldr_en": "Proposes OpenHOI for synthesizing long-horizon hand-object manipulation sequences from free-form language, using a 3D MLLM for affordance grounding and task decomposition.",
+      "tldr_cn": "针对现有手物交互合成方法泛化性弱、仅支持封闭物体集的问题，提出OpenHOI框架，利用微调的3D多模态大语言模型进行联合功能定位和语义任务分解，生成可操纵的长序列交互，在开放世界条件下实现高质量HOI合成，为手物交互中的姿态估计和操纵规划提供了有力基础，推动了该领域的发展。",
+      "title_zh": "OpenHOI：基于多模态大语言模型的开放世界手物交互合成",
+      "motivation_cn": "现有HOI合成方法局限于封闭物体和预定义任务，无法泛化到未见物体。",
+      "method_cn": "集成3D多模态大语言模型，实现交互区域定位和任务分解，生成长时间操纵序列。",
+      "result_cn": "在开放世界HOI合成任务上取得最先进效果，支持语言指令引导。",
+      "conclusion_cn": "OpenHOI首次实现了开放世界HOI合成，推动了手物交互理解和生成能力。",
+      "matched_requirement_id": "req-composite-hoi",
+      "matched_query_tag": "query:hoi:composite",
+      "matched_query_text": "Papers central to 帮我查找手物交互的姿态估计的论文, especially work that connects or combines: hand object interaction pose estimation; hand pose estimation from interaction; object pose estimation in hand manipulation; hand manipulation pose estimation; grasp pose estimation hand object; hand object contact pose estimation; Find papers on hand object interaction pose estimation; Hand and object pose estimation in interactive scenarios."
+    },
+    {
+      "paper_id": "openreview-neurips-2024-qewibatmnn",
+      "score": 7.0,
+      "evidence_en": "Language-guided dexterous grasp generation with hand-object interaction retargeting",
+      "evidence_cn": "语言引导的灵巧抓取生成，包含手物交互重定向",
+      "canonical_evidence": "语言引导的灵巧抓取生成，包含手物交互重定向",
+      "tldr_en": "Proposes DexGYSGrasp for generating dexterous grasps from natural language, using a hand-object interaction retargeting strategy and LLM-assisted annotation.",
+      "tldr_cn": "针对自然语言引导的灵巧抓取任务缺乏高质量数据集的问题，构建了DexGYSNet数据集，通过精心设计的手物交互重定向策略和LLM辅助标注系统生成丰富抓取样本，并提出DexGYSGrasp框架实现基于语言指令的抓取姿态生成，实验表明该方法在抓取质量和语言跟随性上表现优异，为手物交互中的抓取估计提供了新范式。",
+      "title_zh": "按你说的抓取：语言引导的灵巧抓取生成",
+      "motivation_cn": "缺乏自然语言引导的灵巧抓取数据集，限制了人机交互应用。",
+      "method_cn": "设计手物交互重定向策略和LLM辅助语言引导标注系统，构建数据集并提出抓取生成框架。",
+      "result_cn": "在抓取质量和语言指令跟随上取得优异表现。",
+      "conclusion_cn": "DexGYS方法实现了灵活的语言引导抓取，推动了灵巧操纵领域发展。",
+      "matched_requirement_id": "req-5",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "grasp pose estimation hand object"
+    },
+    {
+      "paper_id": "openreview-neurips-2024-lts7pp8ren",
+      "score": 6.0,
+      "evidence_en": "hand pose used in hand-object interaction pressure estimation",
+      "evidence_cn": "手物交互中利用手部姿态估计压力",
+      "canonical_evidence": "手物交互中利用手部姿态估计压力",
+      "tldr_en": "PiMForce enhances hand pressure estimation by combining 3D hand postures with forearm sEMG, robustly estimating pressure under diverse hand-object interactions.",
+      "tldr_cn": "针对手物交互中压力估计不准确的问题，本文提出PiMForce框架，融合3D手部姿态和表面肌电信号，实现鲁棒的全手压力测量。该方法利用姿态信息增强肌肉信号，在多种交互场景下表现优异。实验表明，PiMForce显著提升了压力估计精度，为触觉反馈和人机交互提供了新途径。",
+      "title_zh": "姿态信息辅助的肌肉力学习实现鲁棒手部压力估计",
+      "motivation_cn": "现有手部压力估计方法在复杂手物交互中准确性不足。",
+      "method_cn": "结合3D手部姿态和表面肌电信号，通过多模态融合学习压力映射。",
+      "result_cn": "在21名参与者数据集上压力估计准确率显著提升。",
+      "conclusion_cn": "PiMForce证明手部姿态信息对压力估计有重要辅助作用。",
+      "matched_requirement_id": "req-2",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "hand pose estimation from interaction"
+    },
+    {
+      "paper_id": "openreview-neurips-2024-mhcnlo2qea",
+      "score": 6.0,
+      "evidence_en": "uses IMU measurements from head and hands as reference for egobody pose",
+      "evidence_cn": "利用头部和手部的IMU测量作为自我身体姿态参考",
+      "canonical_evidence": "利用头部和手部的IMU测量作为自我身体姿态参考",
+      "tldr_en": "Estimates ego-body pose from egocentric video using temporally sparse observations like hand poses, with a two-stage diffusion approach decomposing temporal and spatial completion.",
+      "tldr_cn": "针对自我中心视频中身体姿态估计对密集传感器数据的依赖问题，本文提出利用手部姿态等稀疏观测约束全身运动。方法分为时间补全和空间补全两阶段，使用掩码扩散模型。实验表明，该方法在稀疏输入下达到甚至优于密集IMU方法的效果，为可穿戴设备提供了实用解决方案。",
+      "title_zh": "从双重稀疏的自我中心视频数据估计自我身体姿态",
+      "motivation_cn": "现有方法依赖头部和手部的密集IMU数据，限制了实用性。",
+      "method_cn": "提出两阶段扩散模型，先时间补全再空间补全，从稀疏观测估计全身姿态。",
+      "result_cn": "在稀疏输入下达到与密集IMU方法相当的精度。",
+      "conclusion_cn": "证明稀疏手部姿态足以有效约束全身运动。",
+      "matched_requirement_id": "req-composite-imu-pose",
+      "matched_query_tag": "query:imu-pose:composite",
+      "matched_query_text": "Papers central to 利用IMU进行人体或人手姿态估计的论文, especially work that connects or combines: pose estimation using inertial measurement units; human body pose estimation with inertial sensors; hand pose tracking with inertial measurement units; Research papers on human pose estimation using inertial measurement units; Hand pose estimation with IMU sensors for virtual reality; IMU based motion capture for full body and hand tracking; Inertial sensor fusion for accurate human pose estimation."
+    },
+    {
+      "paper_id": "openreview-neurips-2025-t4irkwexhr",
+      "score": 5.0,
+      "evidence_en": "object pose estimation from single RGB reference, relevant to object pose in hand manipulation",
+      "evidence_cn": "基于单RGB参考的物体姿态估计，与手操作中的物体姿态估计相关",
+      "canonical_evidence": "基于单RGB参考的物体姿态估计，与手操作中的物体姿态估计相关",
+      "tldr_en": "SingRef6D estimates 6D object pose from a single RGB reference without depth, applicable to object pose estimation in hand manipulation scenarios.",
+      "tldr_cn": "SingRef6D提出一种轻量级流水线，仅需一张RGB参考图像即可进行6D物体姿态估计，无需深度传感器或多视角采集。该方法对透明或高反光物体鲁棒，且适用于资源受限环境。在手物交互中，该技术可用于估计被操控物体的姿态，从而支持交互分析。",
+      "title_zh": "SingRef6D: 基于单张RGB参考的单目新物体姿态估计",
+      "motivation_cn": "现有6D姿态估计依赖深度传感器，在透明或反光表面失效；RGB方法在低光或纹理缺乏场景鲁棒性差。",
+      "method_cn": "提出SingRef6D，仅需单张RGB参考图像，利用轻量匹配和几何推理估计物体6D姿态，避免深度传感器和多视图合成。",
+      "result_cn": "在标准基准上达到与深度方法相当的精度，同时在挑战性表面和光照条件下表现更鲁棒。",
+      "conclusion_cn": "单RGB参考方案降低了部署成本，拓展了姿态估计在复杂环境下的实用性。",
+      "matched_requirement_id": "req-3",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "object pose estimation in hand manipulation"
+    },
+    {
+      "paper_id": "openreview-neurips-2025-6aaixhco6c",
+      "score": 4.0,
+      "evidence_en": "generative category-level object pose estimation",
+      "evidence_cn": "生成式类别级物体姿态估计",
+      "canonical_evidence": "生成式类别级物体姿态估计",
+      "tldr_en": "RFMPose uses Riemannian Flow Matching for category-level 6D object pose estimation, handling symmetry ambiguities and enabling end-to-end likelihood.",
+      "tldr_cn": "针对判别式方法在多假设预测中的局限性，本文提出RFMPose生成式框架。它通过黎曼流形上的测地线插值确保几何一致性，利用最优输运缓解对称歧义，实现端到端似然估计。在合成和真实数据上，RFMPose展现了优越的精度和泛化能力，为物体姿态估计提供了新范式。",
+      "title_zh": "RFMPose：基于黎曼流匹配的生成式类别级物体姿态估计",
+      "motivation_cn": "判别式方法难以处理对称性和多假设预测，且需要专用网络。",
+      "method_cn": "使用黎曼流匹配学习确定性姿态轨迹，结合最优输运和测地线约束。",
+      "result_cn": "在类别级物体姿态估计基准上达到最优性能。",
+      "conclusion_cn": "RFMPose为生成式姿态估计提供了几何一致的新方法。",
+      "matched_requirement_id": "req-3",
+      "matched_query_tag": "query:hoi",
+      "matched_query_text": "object pose estimation in hand manipulation"
+    },
+    {
+      "paper_id": "openreview-neurips-2025-yokpumjwxc",
+      "score": 4.0,
+      "evidence_en": "human-object interaction detection, related to HOI pose estimation through group context",
+      "evidence_cn": "人类-物体交互检测，通过组群上下文与HOI姿态估计相关",
+      "canonical_evidence": "人类-物体交互检测，通过组群上下文与HOI姿态估计相关",
+      "tldr_en": "GroupHOI models human-object interactions as groups based on geometric proximity and semantics, improving HOI detection which is relevant to understanding interaction poses.",
+      "tldr_cn": "GroupHOI从组群视角重新建模人类-物体交互，超越传统成对关系。框架基于几何邻近性和语义进行上下文传播，能更准确检测多人多物情景中的交互关系。虽然侧重检测而非姿态估计，但其对交互结构的理解可为手物交互姿态估计提供上下文线索。",
+      "title_zh": "学习作为组群的人类-物体交互",
+      "motivation_cn": "现有HOI检测仅关注成对关系，忽略了真实场景中多人多物共同参与的集体行为。",
+      "method_cn": "提出GroupHOI框架，从组群角度传播信息，利用几何和语义聚类聚合上下文。",
+      "result_cn": "在多个HOI检测基准上超越现有方法，尤其在复杂多交互场景中提升显著。",
+      "conclusion_cn": "组群建模更贴近真实交互，为HOI理解提供新范式。",
+      "matched_requirement_id": "req-composite-hoi",
+      "matched_query_tag": "query:hoi:composite",
+      "matched_query_text": "Papers central to 帮我查找手物交互的姿态估计的论文, especially work that connects or combines: hand object interaction pose estimation; hand pose estimation from interaction; object pose estimation in hand manipulation; hand manipulation pose estimation; grasp pose estimation hand object; hand object contact pose estimation; Find papers on hand object interaction pose estimation; Hand and object pose estimation in interactive scenarios."
+    },
+    {
+      "paper_id": "openreview-neurips-2024-gkhxbasqwm",
+      "score": 4.0,
+      "evidence_en": "HOI-aware video object swapping",
+      "evidence_cn": "具有手物交互感知的视频物体替换",
+      "canonical_evidence": "具有手物交互感知的视频物体替换",
+      "tldr_en": "Proposes HOI-Swap, a diffusion-based framework for swapping objects in videos with hand-object interaction awareness, adjusting interaction patterns realistically.",
+      "tldr_cn": "为了解决视频中物体替换时手物交互细节丢失的问题，提出HOI-Swap框架，采用两阶段自监督扩散模型：首阶段在单帧中实现对象替换同时调整交互模式，第二阶段保证时序一致性，在多种HOI视频上实现高质量交互感知的对象替换，虽不直接进行姿态估计，但为HOI理解贡献了新方法。",
+      "title_zh": "HOI-Swap：具有手物交互感知的视频物体替换",
+      "motivation_cn": "现有视频编辑方法难以处理手物交互的细微变化，导致替换不真实。",
+      "method_cn": "提出两阶段自监督扩散框架，首阶段单帧对象替换同时调整交互模式，第二阶段时序一致性优化。",
+      "result_cn": "在多种HOI视频上实现高质量交互感知的对象替换。",
+      "conclusion_cn": "该工作为手物交互感知的视频编辑提供了新方法，虽不直接估计姿态但对HOI理解有贡献。",
+      "matched_requirement_id": "req-composite-hoi",
+      "matched_query_tag": "query:hoi:composite",
+      "matched_query_text": "Papers central to 帮我查找手物交互的姿态估计的论文, especially work that connects or combines: hand object interaction pose estimation; hand pose estimation from interaction; object pose estimation in hand manipulation; hand manipulation pose estimation; grasp pose estimation hand object; hand object contact pose estimation; Find papers on hand object interaction pose estimation; Hand and object pose estimation in interactive scenarios."
     }
   ],
-  "llm_ranked_at": "2026-06-04T07:24:14.343259+00:00",
+  "llm_ranked_at": "2026-06-04T07:42:45.663966+00:00",
   "display_min_score": 4.0,
-  "pruned_at": "2026-06-04T07:24:14.381247+00:00"
+  "pruned_at": "2026-06-04T07:42:45.697201+00:00"
 }
